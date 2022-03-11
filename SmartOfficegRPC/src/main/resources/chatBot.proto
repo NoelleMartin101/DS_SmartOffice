@@ -1,0 +1,28 @@
+syntax= "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.SmartOffice.chatbots";
+option java_outer_classname = "ChatBotServiceImpl";
+
+service chatBotService{
+	rpc chat(stream SendChatMessage) returns (stream ReceiveChatMessage){}
+	rpc staffOnline(Empty) returns (Stream StaffList){}
+	rpc setChatStatus(ChatStatus) return (Empty);
+}
+
+message Empty{}
+
+message SendChatMessage{
+	string sentMessage = 1;
+	string sentTo = 2;
+}
+message ChatStatus{
+	string sentMessage = 1;
+}
+message ReceiveChatMessage{
+	string receivedMessage = 1;
+	string receivedFrom = 2;
+}
+message StaffList{
+	string users = 1;
+}

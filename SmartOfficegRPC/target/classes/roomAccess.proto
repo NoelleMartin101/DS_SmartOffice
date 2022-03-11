@@ -1,0 +1,31 @@
+syntax= "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.SmartOffice.roomAccess";
+option java_outer_classname = "RoomAccessImpl";
+
+service roomAccess{
+	rpc roomAvaliable(RoomAvailable) returns (RoomStatus);
+	rpc roomBooking(RoomBooking) returns (RoomStatus);
+	rpc roomBookedBy(RoomBooked) returns (stream BoookedBy);
+}
+
+
+message RoomAvailable{
+	int32 roomNo = 1;
+}
+message RoomBooking{
+	int32 roomNo = 1;
+	string bookedBy = 2;
+}
+message RoomBooked{
+	string roomBookedBy = 1;
+	date bookedFor = 2;
+	string bookedOn = 3;	
+}
+message BoookedBy{
+	string roomBookedBy = 1;
+}
+message RoomStatus{
+	string roomStatus = 1;
+}

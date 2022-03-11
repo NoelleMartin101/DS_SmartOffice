@@ -1,0 +1,28 @@
+syntax= "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.SmartOffice.documentRepository";
+option java_outer_classname = "DocumentRepositoryImpl";
+
+service documentRepository{
+	rpc retrieveDocument(stream RequestedDocument) returns (stream RequestedDocument){}
+	rpc sendDocument(stream SentDocument) returns (NewDocumentPath);
+	rpc deleteDocument(stream DeleteDocument) returns (Empty);
+	rpc updateDocument(stream UpdateDocument) returns (Empty);
+}
+
+message RequestedDocument {
+  string docName = 1;
+}
+message SentDocument {
+  string docName = 1;
+}
+message DeleteDocument {
+  string docName = 1;
+}
+message UpdateDocument {
+  string docName = 1;
+}
+message NewDocumentPath{
+	string newDocumentPath = 1;
+}
