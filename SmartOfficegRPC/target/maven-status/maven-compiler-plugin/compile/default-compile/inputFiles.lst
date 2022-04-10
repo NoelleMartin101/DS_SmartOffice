@@ -2,9 +2,7 @@ C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartO
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\ReceiveChatMessage.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\documentRepositoryGrpc.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\userAccess\LoginStatusOrBuilder.java
-C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\ChatBotServiceImpl.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\ReceiveChatMessageOrBuilder.java
-C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\chatBotServiceGrpc.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\DeleteDocument.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\userAccess\userGrpc.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\roomAccess\BoookedByOrBuilder.java
@@ -23,11 +21,11 @@ C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartO
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\NewDocumentPath.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\UpdateDocumentOrBuilder.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\roomAccess\RoomBookedOrBuilder.java
+C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\chatBoxServiceGrpc.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\userAccess\UserAccessImpl.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\roomAccess\BoookedBy.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\SentDocumentOrBuilder.java
-C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\Empty.java
-C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\EmptyOrBuilder.java
+C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\ChatBoxServiceImpl.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\SendChatMessage.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbots\SendChatMessageOrBuilder.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\UpdateDocument.java

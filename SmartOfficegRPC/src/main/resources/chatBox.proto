@@ -2,9 +2,9 @@ syntax= "proto3";
 
 option java_multiple_files = true;
 option java_package = "grpc.SmartOffice.chatbots";
-option java_outer_classname = "ChatBotServiceImpl";
+option java_outer_classname = "ChatBoxServiceImpl";
 
-service chatBotService{
+service chatBoxService{
 	rpc Chat(stream SendChatMessage) returns (stream ReceiveChatMessage){}//Bi-Directional
 	rpc GetChatStatus(ChatStatus) returns(ChatStatus){} //unary
 }

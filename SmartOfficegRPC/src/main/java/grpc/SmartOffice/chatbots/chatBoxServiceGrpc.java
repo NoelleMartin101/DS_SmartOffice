@@ -19,12 +19,12 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: chatBot.proto")
-public final class chatBotServiceGrpc {
+    comments = "Source: chatBox.proto")
+public final class chatBoxServiceGrpc {
 
-  private chatBotServiceGrpc() {}
+  private chatBoxServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "chatBotService";
+  public static final String SERVICE_NAME = "chatBoxService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<grpc.SmartOffice.chatbots.SendChatMessage,
@@ -38,20 +38,20 @@ public final class chatBotServiceGrpc {
   public static io.grpc.MethodDescriptor<grpc.SmartOffice.chatbots.SendChatMessage,
       grpc.SmartOffice.chatbots.ReceiveChatMessage> getChatMethod() {
     io.grpc.MethodDescriptor<grpc.SmartOffice.chatbots.SendChatMessage, grpc.SmartOffice.chatbots.ReceiveChatMessage> getChatMethod;
-    if ((getChatMethod = chatBotServiceGrpc.getChatMethod) == null) {
-      synchronized (chatBotServiceGrpc.class) {
-        if ((getChatMethod = chatBotServiceGrpc.getChatMethod) == null) {
-          chatBotServiceGrpc.getChatMethod = getChatMethod = 
+    if ((getChatMethod = chatBoxServiceGrpc.getChatMethod) == null) {
+      synchronized (chatBoxServiceGrpc.class) {
+        if ((getChatMethod = chatBoxServiceGrpc.getChatMethod) == null) {
+          chatBoxServiceGrpc.getChatMethod = getChatMethod = 
               io.grpc.MethodDescriptor.<grpc.SmartOffice.chatbots.SendChatMessage, grpc.SmartOffice.chatbots.ReceiveChatMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "chatBotService", "Chat"))
+                  "chatBoxService", "Chat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.SmartOffice.chatbots.SendChatMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.SmartOffice.chatbots.ReceiveChatMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new chatBotServiceMethodDescriptorSupplier("Chat"))
+                  .setSchemaDescriptor(new chatBoxServiceMethodDescriptorSupplier("Chat"))
                   .build();
           }
         }
@@ -70,20 +70,20 @@ public final class chatBotServiceGrpc {
   public static io.grpc.MethodDescriptor<grpc.SmartOffice.chatbots.ChatStatus,
       grpc.SmartOffice.chatbots.ChatStatus> getGetChatStatusMethod() {
     io.grpc.MethodDescriptor<grpc.SmartOffice.chatbots.ChatStatus, grpc.SmartOffice.chatbots.ChatStatus> getGetChatStatusMethod;
-    if ((getGetChatStatusMethod = chatBotServiceGrpc.getGetChatStatusMethod) == null) {
-      synchronized (chatBotServiceGrpc.class) {
-        if ((getGetChatStatusMethod = chatBotServiceGrpc.getGetChatStatusMethod) == null) {
-          chatBotServiceGrpc.getGetChatStatusMethod = getGetChatStatusMethod = 
+    if ((getGetChatStatusMethod = chatBoxServiceGrpc.getGetChatStatusMethod) == null) {
+      synchronized (chatBoxServiceGrpc.class) {
+        if ((getGetChatStatusMethod = chatBoxServiceGrpc.getGetChatStatusMethod) == null) {
+          chatBoxServiceGrpc.getGetChatStatusMethod = getGetChatStatusMethod = 
               io.grpc.MethodDescriptor.<grpc.SmartOffice.chatbots.ChatStatus, grpc.SmartOffice.chatbots.ChatStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "chatBotService", "GetChatStatus"))
+                  "chatBoxService", "GetChatStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.SmartOffice.chatbots.ChatStatus.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.SmartOffice.chatbots.ChatStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new chatBotServiceMethodDescriptorSupplier("GetChatStatus"))
+                  .setSchemaDescriptor(new chatBoxServiceMethodDescriptorSupplier("GetChatStatus"))
                   .build();
           }
         }
@@ -94,29 +94,29 @@ public final class chatBotServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static chatBotServiceStub newStub(io.grpc.Channel channel) {
-    return new chatBotServiceStub(channel);
+  public static chatBoxServiceStub newStub(io.grpc.Channel channel) {
+    return new chatBoxServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static chatBotServiceBlockingStub newBlockingStub(
+  public static chatBoxServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new chatBotServiceBlockingStub(channel);
+    return new chatBoxServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static chatBotServiceFutureStub newFutureStub(
+  public static chatBoxServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new chatBotServiceFutureStub(channel);
+    return new chatBoxServiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class chatBotServiceImplBase implements io.grpc.BindableService {
+  public static abstract class chatBoxServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
@@ -154,20 +154,20 @@ public final class chatBotServiceGrpc {
 
   /**
    */
-  public static final class chatBotServiceStub extends io.grpc.stub.AbstractStub<chatBotServiceStub> {
-    private chatBotServiceStub(io.grpc.Channel channel) {
+  public static final class chatBoxServiceStub extends io.grpc.stub.AbstractStub<chatBoxServiceStub> {
+    private chatBoxServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private chatBotServiceStub(io.grpc.Channel channel,
+    private chatBoxServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected chatBotServiceStub build(io.grpc.Channel channel,
+    protected chatBoxServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new chatBotServiceStub(channel, callOptions);
+      return new chatBoxServiceStub(channel, callOptions);
     }
 
     /**
@@ -189,20 +189,20 @@ public final class chatBotServiceGrpc {
 
   /**
    */
-  public static final class chatBotServiceBlockingStub extends io.grpc.stub.AbstractStub<chatBotServiceBlockingStub> {
-    private chatBotServiceBlockingStub(io.grpc.Channel channel) {
+  public static final class chatBoxServiceBlockingStub extends io.grpc.stub.AbstractStub<chatBoxServiceBlockingStub> {
+    private chatBoxServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private chatBotServiceBlockingStub(io.grpc.Channel channel,
+    private chatBoxServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected chatBotServiceBlockingStub build(io.grpc.Channel channel,
+    protected chatBoxServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new chatBotServiceBlockingStub(channel, callOptions);
+      return new chatBoxServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -215,20 +215,20 @@ public final class chatBotServiceGrpc {
 
   /**
    */
-  public static final class chatBotServiceFutureStub extends io.grpc.stub.AbstractStub<chatBotServiceFutureStub> {
-    private chatBotServiceFutureStub(io.grpc.Channel channel) {
+  public static final class chatBoxServiceFutureStub extends io.grpc.stub.AbstractStub<chatBoxServiceFutureStub> {
+    private chatBoxServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private chatBotServiceFutureStub(io.grpc.Channel channel,
+    private chatBoxServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected chatBotServiceFutureStub build(io.grpc.Channel channel,
+    protected chatBoxServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new chatBotServiceFutureStub(channel, callOptions);
+      return new chatBoxServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -248,10 +248,10 @@ public final class chatBotServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final chatBotServiceImplBase serviceImpl;
+    private final chatBoxServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(chatBotServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(chatBoxServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -283,32 +283,32 @@ public final class chatBotServiceGrpc {
     }
   }
 
-  private static abstract class chatBotServiceBaseDescriptorSupplier
+  private static abstract class chatBoxServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    chatBotServiceBaseDescriptorSupplier() {}
+    chatBoxServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.getDescriptor();
+      return grpc.SmartOffice.chatbots.ChatBoxServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("chatBotService");
+      return getFileDescriptor().findServiceByName("chatBoxService");
     }
   }
 
-  private static final class chatBotServiceFileDescriptorSupplier
-      extends chatBotServiceBaseDescriptorSupplier {
-    chatBotServiceFileDescriptorSupplier() {}
+  private static final class chatBoxServiceFileDescriptorSupplier
+      extends chatBoxServiceBaseDescriptorSupplier {
+    chatBoxServiceFileDescriptorSupplier() {}
   }
 
-  private static final class chatBotServiceMethodDescriptorSupplier
-      extends chatBotServiceBaseDescriptorSupplier
+  private static final class chatBoxServiceMethodDescriptorSupplier
+      extends chatBoxServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    chatBotServiceMethodDescriptorSupplier(String methodName) {
+    chatBoxServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -323,11 +323,11 @@ public final class chatBotServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (chatBotServiceGrpc.class) {
+      synchronized (chatBoxServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new chatBotServiceFileDescriptorSupplier())
+              .setSchemaDescriptor(new chatBoxServiceFileDescriptorSupplier())
               .addMethod(getChatMethod())
               .addMethod(getGetChatStatusMethod())
               .build();
