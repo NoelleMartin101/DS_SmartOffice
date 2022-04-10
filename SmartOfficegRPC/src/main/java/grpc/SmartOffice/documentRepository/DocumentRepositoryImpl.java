@@ -15,6 +15,11 @@ public final class DocumentRepositoryImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Empty_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Empty_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RequestedDocument_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -24,6 +29,16 @@ public final class DocumentRepositoryImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SentDocument_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DeleteDocument_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DeleteDocument_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateDocument_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateDocument_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_NewDocumentPath_descriptor;
   static final 
@@ -38,15 +53,20 @@ public final class DocumentRepositoryImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030documentRepository.proto\"$\n\021RequestedD" +
-      "ocument\022\017\n\007docName\030\001 \001(\t\"\037\n\014SentDocument" +
-      "\022\017\n\007docName\030\001 \001(\t\"*\n\017NewDocumentPath\022\027\n\017" +
-      "newDocumentPath\030\001 \001(\t2\211\001\n\022documentReposi" +
-      "tory\022@\n\020retrieveDocument\022\022.RequestedDocu" +
-      "ment\032\022.RequestedDocument\"\000(\0010\001\0221\n\014sendDo" +
-      "cument\022\r.SentDocument\032\020.NewDocumentPath(" +
-      "\001B?\n#grpc.SmartOffice.documentRepository" +
-      "B\026DocumentRepositoryImplP\001b\006proto3"
+      "\n\030documentRepository.proto\"\007\n\005Empty\"$\n\021R" +
+      "equestedDocument\022\017\n\007docName\030\001 \001(\t\"\037\n\014Sen" +
+      "tDocument\022\017\n\007docName\030\001 \001(\t\"!\n\016DeleteDocu" +
+      "ment\022\017\n\007docName\030\001 \001(\t\"!\n\016UpdateDocument\022" +
+      "\017\n\007docName\030\001 \001(\t\"*\n\017NewDocumentPath\022\027\n\017n" +
+      "ewDocumentPath\030\001 \001(\t2\343\001\n\022documentReposit" +
+      "ory\022@\n\020retrieveDocument\022\022.RequestedDocum" +
+      "ent\032\022.RequestedDocument\"\000(\0010\001\0221\n\014sendDoc" +
+      "ument\022\r.SentDocument\032\020.NewDocumentPath(\001" +
+      "\022+\n\016deleteDocument\022\017.DeleteDocument\032\006.Em" +
+      "pty(\001\022+\n\016updateDocument\022\017.UpdateDocument" +
+      "\032\006.Empty(\001B?\n#grpc.SmartOffice.documentR" +
+      "epositoryB\026DocumentRepositoryImplP\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -60,20 +80,38 @@ public final class DocumentRepositoryImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_RequestedDocument_descriptor =
+    internal_static_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Empty_descriptor,
+        new java.lang.String[] { });
+    internal_static_RequestedDocument_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_RequestedDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RequestedDocument_descriptor,
         new java.lang.String[] { "DocName", });
     internal_static_SentDocument_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_SentDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SentDocument_descriptor,
         new java.lang.String[] { "DocName", });
+    internal_static_DeleteDocument_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_DeleteDocument_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DeleteDocument_descriptor,
+        new java.lang.String[] { "DocName", });
+    internal_static_UpdateDocument_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_UpdateDocument_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateDocument_descriptor,
+        new java.lang.String[] { "DocName", });
     internal_static_NewDocumentPath_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_NewDocumentPath_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NewDocumentPath_descriptor,

@@ -11,4 +11,14 @@ public interface RoomBookingOrBuilder extends
    * <code>int32 roomNo = 1;</code>
    */
   int getRoomNo();
+
+  /**
+   * <code>string bookedBy = 2;</code>
+   */
+  java.lang.String getBookedBy();
+  /**
+   * <code>string bookedBy = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getBookedByBytes();
 }

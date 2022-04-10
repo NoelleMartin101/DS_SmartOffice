@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SendChatMessage() {
     sentMessage_ = "";
+    sentTo_ = "";
   }
 
   @java.lang.Override
@@ -47,6 +48,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             sentMessage_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sentTo_ = s;
             break;
           }
           default: {
@@ -115,6 +122,40 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SENTTO_FIELD_NUMBER = 2;
+  private volatile java.lang.Object sentTo_;
+  /**
+   * <code>string sentTo = 2;</code>
+   */
+  public java.lang.String getSentTo() {
+    java.lang.Object ref = sentTo_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sentTo_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string sentTo = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSentToBytes() {
+    java.lang.Object ref = sentTo_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sentTo_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +173,9 @@ private static final long serialVersionUID = 0L;
     if (!getSentMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sentMessage_);
     }
+    if (!getSentToBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sentTo_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -143,6 +187,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getSentMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sentMessage_);
+    }
+    if (!getSentToBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sentTo_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,6 +209,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getSentMessage()
         .equals(other.getSentMessage());
+    result = result && getSentTo()
+        .equals(other.getSentTo());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -175,6 +224,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SENTMESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getSentMessage().hashCode();
+    hash = (37 * hash) + SENTTO_FIELD_NUMBER;
+    hash = (53 * hash) + getSentTo().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -310,6 +361,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       sentMessage_ = "";
 
+      sentTo_ = "";
+
       return this;
     }
 
@@ -337,6 +390,7 @@ private static final long serialVersionUID = 0L;
     public grpc.SmartOffice.chatbots.SendChatMessage buildPartial() {
       grpc.SmartOffice.chatbots.SendChatMessage result = new grpc.SmartOffice.chatbots.SendChatMessage(this);
       result.sentMessage_ = sentMessage_;
+      result.sentTo_ = sentTo_;
       onBuilt();
       return result;
     }
@@ -387,6 +441,10 @@ private static final long serialVersionUID = 0L;
       if (other == grpc.SmartOffice.chatbots.SendChatMessage.getDefaultInstance()) return this;
       if (!other.getSentMessage().isEmpty()) {
         sentMessage_ = other.sentMessage_;
+        onChanged();
+      }
+      if (!other.getSentTo().isEmpty()) {
+        sentTo_ = other.sentTo_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -483,6 +541,75 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       sentMessage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sentTo_ = "";
+    /**
+     * <code>string sentTo = 2;</code>
+     */
+    public java.lang.String getSentTo() {
+      java.lang.Object ref = sentTo_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sentTo_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string sentTo = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSentToBytes() {
+      java.lang.Object ref = sentTo_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sentTo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string sentTo = 2;</code>
+     */
+    public Builder setSentTo(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sentTo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string sentTo = 2;</code>
+     */
+    public Builder clearSentTo() {
+      
+      sentTo_ = getDefaultInstance().getSentTo();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string sentTo = 2;</code>
+     */
+    public Builder setSentToBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sentTo_ = value;
       onChanged();
       return this;
     }

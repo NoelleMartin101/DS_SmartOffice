@@ -3,8 +3,8 @@
 
 package grpc.SmartOffice.chatbots;
 
-public interface SendChatMessageOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:SendChatMessage)
+public interface ChatStatusOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ChatStatus)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -16,14 +16,4 @@ public interface SendChatMessageOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSentMessageBytes();
-
-  /**
-   * <code>string sentTo = 2;</code>
-   */
-  java.lang.String getSentTo();
-  /**
-   * <code>string sentTo = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getSentToBytes();
 }

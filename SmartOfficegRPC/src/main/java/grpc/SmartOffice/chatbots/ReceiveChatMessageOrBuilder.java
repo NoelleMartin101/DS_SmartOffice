@@ -16,4 +16,14 @@ public interface ReceiveChatMessageOrBuilder extends
    */
   com.google.protobuf.ByteString
       getReceivedMessageBytes();
+
+  /**
+   * <code>string receivedFrom = 2;</code>
+   */
+  java.lang.String getReceivedFrom();
+  /**
+   * <code>string receivedFrom = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getReceivedFromBytes();
 }

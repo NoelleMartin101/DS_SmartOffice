@@ -11,6 +11,7 @@ service documentRepository{
 	rpc updateDocument(stream UpdateDocument) returns (Empty);
 }
 
+message Empty{}
 message RequestedDocument {
   string docName = 1;
 }

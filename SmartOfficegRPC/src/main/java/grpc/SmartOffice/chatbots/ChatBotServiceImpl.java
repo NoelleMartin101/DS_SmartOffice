@@ -15,11 +15,6 @@ public final class ChatBotServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Empty_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Empty_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SendChatMessage_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -29,6 +24,11 @@ public final class ChatBotServiceImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ReceiveChatMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ChatStatus_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ChatStatus_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -38,13 +38,15 @@ public final class ChatBotServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rchatBot.proto\"\007\n\005Empty\"&\n\017SendChatMess" +
-      "age\022\023\n\013sentMessage\030\001 \001(\t\"-\n\022ReceiveChatM" +
-      "essage\022\027\n\017receivedMessage\030\001 \001(\t2E\n\016chatB" +
-      "otService\0223\n\004chat\022\020.SendChatMessage\032\023.Re" +
-      "ceiveChatMessage\"\000(\0010\001B1\n\031grpc.SmartOffi" +
-      "ce.chatbotsB\022ChatBotServiceImplP\001b\006proto" +
-      "3"
+      "\n\rchatBot.proto\"6\n\017SendChatMessage\022\023\n\013se" +
+      "ntMessage\030\001 \001(\t\022\016\n\006sentTo\030\002 \001(\t\"C\n\022Recei" +
+      "veChatMessage\022\027\n\017receivedMessage\030\001 \001(\t\022\024" +
+      "\n\014receivedFrom\030\002 \001(\t\"!\n\nChatStatus\022\023\n\013se" +
+      "ntMessage\030\001 \001(\t2r\n\016chatBotService\0223\n\004Cha" +
+      "t\022\020.SendChatMessage\032\023.ReceiveChatMessage" +
+      "\"\000(\0010\001\022+\n\rGetChatStatus\022\013.ChatStatus\032\013.C" +
+      "hatStatus\"\000B1\n\031grpc.SmartOffice.chatbots" +
+      "B\022ChatBotServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -58,24 +60,24 @@ public final class ChatBotServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_Empty_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Empty_descriptor,
-        new java.lang.String[] { });
     internal_static_SendChatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_SendChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SendChatMessage_descriptor,
-        new java.lang.String[] { "SentMessage", });
+        new java.lang.String[] { "SentMessage", "SentTo", });
     internal_static_ReceiveChatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_ReceiveChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReceiveChatMessage_descriptor,
-        new java.lang.String[] { "ReceivedMessage", });
+        new java.lang.String[] { "ReceivedMessage", "ReceivedFrom", });
+    internal_static_ChatStatus_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_ChatStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ChatStatus_descriptor,
+        new java.lang.String[] { "SentMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

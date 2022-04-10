@@ -91,6 +91,70 @@ public final class documentRepositoryGrpc {
      return getSendDocumentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.DeleteDocument,
+      grpc.SmartOffice.documentRepository.Empty> getDeleteDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "deleteDocument",
+      requestType = grpc.SmartOffice.documentRepository.DeleteDocument.class,
+      responseType = grpc.SmartOffice.documentRepository.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.DeleteDocument,
+      grpc.SmartOffice.documentRepository.Empty> getDeleteDocumentMethod() {
+    io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.DeleteDocument, grpc.SmartOffice.documentRepository.Empty> getDeleteDocumentMethod;
+    if ((getDeleteDocumentMethod = documentRepositoryGrpc.getDeleteDocumentMethod) == null) {
+      synchronized (documentRepositoryGrpc.class) {
+        if ((getDeleteDocumentMethod = documentRepositoryGrpc.getDeleteDocumentMethod) == null) {
+          documentRepositoryGrpc.getDeleteDocumentMethod = getDeleteDocumentMethod = 
+              io.grpc.MethodDescriptor.<grpc.SmartOffice.documentRepository.DeleteDocument, grpc.SmartOffice.documentRepository.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "documentRepository", "deleteDocument"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.documentRepository.DeleteDocument.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.documentRepository.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new documentRepositoryMethodDescriptorSupplier("deleteDocument"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteDocumentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.UpdateDocument,
+      grpc.SmartOffice.documentRepository.Empty> getUpdateDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "updateDocument",
+      requestType = grpc.SmartOffice.documentRepository.UpdateDocument.class,
+      responseType = grpc.SmartOffice.documentRepository.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.UpdateDocument,
+      grpc.SmartOffice.documentRepository.Empty> getUpdateDocumentMethod() {
+    io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.UpdateDocument, grpc.SmartOffice.documentRepository.Empty> getUpdateDocumentMethod;
+    if ((getUpdateDocumentMethod = documentRepositoryGrpc.getUpdateDocumentMethod) == null) {
+      synchronized (documentRepositoryGrpc.class) {
+        if ((getUpdateDocumentMethod = documentRepositoryGrpc.getUpdateDocumentMethod) == null) {
+          documentRepositoryGrpc.getUpdateDocumentMethod = getUpdateDocumentMethod = 
+              io.grpc.MethodDescriptor.<grpc.SmartOffice.documentRepository.UpdateDocument, grpc.SmartOffice.documentRepository.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "documentRepository", "updateDocument"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.documentRepository.UpdateDocument.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.documentRepository.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new documentRepositoryMethodDescriptorSupplier("updateDocument"))
+                  .build();
+          }
+        }
+     }
+     return getUpdateDocumentMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -132,6 +196,20 @@ public final class documentRepositoryGrpc {
       return asyncUnimplementedStreamingCall(getSendDocumentMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.DeleteDocument> deleteDocument(
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty> responseObserver) {
+      return asyncUnimplementedStreamingCall(getDeleteDocumentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.UpdateDocument> updateDocument(
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty> responseObserver) {
+      return asyncUnimplementedStreamingCall(getUpdateDocumentMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -148,6 +226,20 @@ public final class documentRepositoryGrpc {
                 grpc.SmartOffice.documentRepository.SentDocument,
                 grpc.SmartOffice.documentRepository.NewDocumentPath>(
                   this, METHODID_SEND_DOCUMENT)))
+          .addMethod(
+            getDeleteDocumentMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                grpc.SmartOffice.documentRepository.DeleteDocument,
+                grpc.SmartOffice.documentRepository.Empty>(
+                  this, METHODID_DELETE_DOCUMENT)))
+          .addMethod(
+            getUpdateDocumentMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                grpc.SmartOffice.documentRepository.UpdateDocument,
+                grpc.SmartOffice.documentRepository.Empty>(
+                  this, METHODID_UPDATE_DOCUMENT)))
           .build();
     }
   }
@@ -184,6 +276,22 @@ public final class documentRepositoryGrpc {
         io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.NewDocumentPath> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getSendDocumentMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.DeleteDocument> deleteDocument(
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.UpdateDocument> updateDocument(
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -227,6 +335,8 @@ public final class documentRepositoryGrpc {
 
   private static final int METHODID_RETRIEVE_DOCUMENT = 0;
   private static final int METHODID_SEND_DOCUMENT = 1;
+  private static final int METHODID_DELETE_DOCUMENT = 2;
+  private static final int METHODID_UPDATE_DOCUMENT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -261,6 +371,12 @@ public final class documentRepositoryGrpc {
         case METHODID_SEND_DOCUMENT:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.sendDocument(
               (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.NewDocumentPath>) responseObserver);
+        case METHODID_DELETE_DOCUMENT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.deleteDocument(
+              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty>) responseObserver);
+        case METHODID_UPDATE_DOCUMENT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.updateDocument(
+              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.Empty>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -314,6 +430,8 @@ public final class documentRepositoryGrpc {
               .setSchemaDescriptor(new documentRepositoryFileDescriptorSupplier())
               .addMethod(getRetrieveDocumentMethod())
               .addMethod(getSendDocumentMethod())
+              .addMethod(getDeleteDocumentMethod())
+              .addMethod(getUpdateDocumentMethod())
               .build();
         }
       }

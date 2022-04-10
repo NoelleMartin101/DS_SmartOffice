@@ -20,7 +20,7 @@ message RoomBooking{
 }
 message RoomBooked{
 	string roomBookedBy = 1;
-	date bookedFor = 2;
+	string bookedFor = 2;
 	string bookedOn = 3;	
 }
 message BoookedBy{

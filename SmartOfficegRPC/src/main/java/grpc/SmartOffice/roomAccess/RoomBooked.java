@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private RoomBooked() {
     roomBookedBy_ = "";
+    bookedFor_ = "";
+    bookedOn_ = "";
   }
 
   @java.lang.Override
@@ -47,6 +49,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             roomBookedBy_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bookedFor_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bookedOn_ = s;
             break;
           }
           default: {
@@ -115,6 +129,74 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BOOKEDFOR_FIELD_NUMBER = 2;
+  private volatile java.lang.Object bookedFor_;
+  /**
+   * <code>string bookedFor = 2;</code>
+   */
+  public java.lang.String getBookedFor() {
+    java.lang.Object ref = bookedFor_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bookedFor_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string bookedFor = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBookedForBytes() {
+    java.lang.Object ref = bookedFor_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bookedFor_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BOOKEDON_FIELD_NUMBER = 3;
+  private volatile java.lang.Object bookedOn_;
+  /**
+   * <code>string bookedOn = 3;</code>
+   */
+  public java.lang.String getBookedOn() {
+    java.lang.Object ref = bookedOn_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bookedOn_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string bookedOn = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBookedOnBytes() {
+    java.lang.Object ref = bookedOn_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bookedOn_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +214,12 @@ private static final long serialVersionUID = 0L;
     if (!getRoomBookedByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomBookedBy_);
     }
+    if (!getBookedForBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bookedFor_);
+    }
+    if (!getBookedOnBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bookedOn_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -143,6 +231,12 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getRoomBookedByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomBookedBy_);
+    }
+    if (!getBookedForBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bookedFor_);
+    }
+    if (!getBookedOnBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bookedOn_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,6 +256,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getRoomBookedBy()
         .equals(other.getRoomBookedBy());
+    result = result && getBookedFor()
+        .equals(other.getBookedFor());
+    result = result && getBookedOn()
+        .equals(other.getBookedOn());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -175,6 +273,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ROOMBOOKEDBY_FIELD_NUMBER;
     hash = (53 * hash) + getRoomBookedBy().hashCode();
+    hash = (37 * hash) + BOOKEDFOR_FIELD_NUMBER;
+    hash = (53 * hash) + getBookedFor().hashCode();
+    hash = (37 * hash) + BOOKEDON_FIELD_NUMBER;
+    hash = (53 * hash) + getBookedOn().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -310,6 +412,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       roomBookedBy_ = "";
 
+      bookedFor_ = "";
+
+      bookedOn_ = "";
+
       return this;
     }
 
@@ -337,6 +443,8 @@ private static final long serialVersionUID = 0L;
     public grpc.SmartOffice.roomAccess.RoomBooked buildPartial() {
       grpc.SmartOffice.roomAccess.RoomBooked result = new grpc.SmartOffice.roomAccess.RoomBooked(this);
       result.roomBookedBy_ = roomBookedBy_;
+      result.bookedFor_ = bookedFor_;
+      result.bookedOn_ = bookedOn_;
       onBuilt();
       return result;
     }
@@ -387,6 +495,14 @@ private static final long serialVersionUID = 0L;
       if (other == grpc.SmartOffice.roomAccess.RoomBooked.getDefaultInstance()) return this;
       if (!other.getRoomBookedBy().isEmpty()) {
         roomBookedBy_ = other.roomBookedBy_;
+        onChanged();
+      }
+      if (!other.getBookedFor().isEmpty()) {
+        bookedFor_ = other.bookedFor_;
+        onChanged();
+      }
+      if (!other.getBookedOn().isEmpty()) {
+        bookedOn_ = other.bookedOn_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -483,6 +599,144 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       roomBookedBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bookedFor_ = "";
+    /**
+     * <code>string bookedFor = 2;</code>
+     */
+    public java.lang.String getBookedFor() {
+      java.lang.Object ref = bookedFor_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookedFor_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string bookedFor = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBookedForBytes() {
+      java.lang.Object ref = bookedFor_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookedFor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string bookedFor = 2;</code>
+     */
+    public Builder setBookedFor(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bookedFor_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bookedFor = 2;</code>
+     */
+    public Builder clearBookedFor() {
+      
+      bookedFor_ = getDefaultInstance().getBookedFor();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bookedFor = 2;</code>
+     */
+    public Builder setBookedForBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bookedFor_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bookedOn_ = "";
+    /**
+     * <code>string bookedOn = 3;</code>
+     */
+    public java.lang.String getBookedOn() {
+      java.lang.Object ref = bookedOn_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bookedOn_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string bookedOn = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBookedOnBytes() {
+      java.lang.Object ref = bookedOn_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bookedOn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string bookedOn = 3;</code>
+     */
+    public Builder setBookedOn(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bookedOn_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bookedOn = 3;</code>
+     */
+    public Builder clearBookedOn() {
+      
+      bookedOn_ = getDefaultInstance().getBookedOn();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string bookedOn = 3;</code>
+     */
+    public Builder setBookedOnBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bookedOn_ = value;
       onChanged();
       return this;
     }

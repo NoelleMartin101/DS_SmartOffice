@@ -49,15 +49,17 @@ public final class RoomAccessImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\020roomAccess.proto\"\037\n\rRoomAvailable\022\016\n\006r" +
-      "oomNo\030\001 \001(\005\"\035\n\013RoomBooking\022\016\n\006roomNo\030\001 \001" +
-      "(\005\"\"\n\nRoomBooked\022\024\n\014roomBookedBy\030\001 \001(\t\"!" +
-      "\n\tBoookedBy\022\024\n\014roomBookedBy\030\001 \001(\t\" \n\nRoo" +
-      "mStatus\022\022\n\nroomStatus\030\001 \001(\t2\217\001\n\nroomAcce" +
-      "ss\022,\n\rroomAvaliable\022\016.RoomAvailable\032\013.Ro" +
-      "omStatus\022(\n\013roomBooking\022\014.RoomBooking\032\013." +
-      "RoomStatus\022)\n\014roomBookedBy\022\013.RoomBooked\032" +
-      "\n.BoookedBy0\001B/\n\033grpc.SmartOffice.roomAc" +
-      "cessB\016RoomAccessImplP\001b\006proto3"
+      "oomNo\030\001 \001(\005\"/\n\013RoomBooking\022\016\n\006roomNo\030\001 \001" +
+      "(\005\022\020\n\010bookedBy\030\002 \001(\t\"G\n\nRoomBooked\022\024\n\014ro" +
+      "omBookedBy\030\001 \001(\t\022\021\n\tbookedFor\030\002 \001(\t\022\020\n\010b" +
+      "ookedOn\030\003 \001(\t\"!\n\tBoookedBy\022\024\n\014roomBooked" +
+      "By\030\001 \001(\t\" \n\nRoomStatus\022\022\n\nroomStatus\030\001 \001" +
+      "(\t2\217\001\n\nroomAccess\022,\n\rroomAvaliable\022\016.Roo" +
+      "mAvailable\032\013.RoomStatus\022(\n\013roomBooking\022\014" +
+      ".RoomBooking\032\013.RoomStatus\022)\n\014roomBookedB" +
+      "y\022\013.RoomBooked\032\n.BoookedBy0\001B/\n\033grpc.Sma" +
+      "rtOffice.roomAccessB\016RoomAccessImplP\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -82,13 +84,13 @@ public final class RoomAccessImpl {
     internal_static_RoomBooking_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoomBooking_descriptor,
-        new java.lang.String[] { "RoomNo", });
+        new java.lang.String[] { "RoomNo", "BookedBy", });
     internal_static_RoomBooked_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_RoomBooked_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoomBooked_descriptor,
-        new java.lang.String[] { "RoomBookedBy", });
+        new java.lang.String[] { "RoomBookedBy", "BookedFor", "BookedOn", });
     internal_static_BoookedBy_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_BoookedBy_fieldAccessorTable = new

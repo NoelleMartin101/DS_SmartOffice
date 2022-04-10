@@ -16,4 +16,24 @@ public interface RoomBookedOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRoomBookedByBytes();
+
+  /**
+   * <code>string bookedFor = 2;</code>
+   */
+  java.lang.String getBookedFor();
+  /**
+   * <code>string bookedFor = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getBookedForBytes();
+
+  /**
+   * <code>string bookedOn = 3;</code>
+   */
+  java.lang.String getBookedOn();
+  /**
+   * <code>string bookedOn = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getBookedOnBytes();
 }

@@ -4,20 +4,19 @@
 package grpc.SmartOffice.chatbots;
 
 /**
- * Protobuf type {@code ReceiveChatMessage}
+ * Protobuf type {@code ChatStatus}
  */
-public  final class ReceiveChatMessage extends
+public  final class ChatStatus extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ReceiveChatMessage)
-    ReceiveChatMessageOrBuilder {
+    // @@protoc_insertion_point(message_implements:ChatStatus)
+    ChatStatusOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ReceiveChatMessage.newBuilder() to construct.
-  private ReceiveChatMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ChatStatus.newBuilder() to construct.
+  private ChatStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReceiveChatMessage() {
-    receivedMessage_ = "";
-    receivedFrom_ = "";
+  private ChatStatus() {
+    sentMessage_ = "";
   }
 
   @java.lang.Override
@@ -25,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReceiveChatMessage(
+  private ChatStatus(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -47,13 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            receivedMessage_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            receivedFrom_ = s;
+            sentMessage_ = s;
             break;
           }
           default: {
@@ -77,79 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ReceiveChatMessage_descriptor;
+    return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ChatStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ReceiveChatMessage_fieldAccessorTable
+    return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ChatStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            grpc.SmartOffice.chatbots.ReceiveChatMessage.class, grpc.SmartOffice.chatbots.ReceiveChatMessage.Builder.class);
+            grpc.SmartOffice.chatbots.ChatStatus.class, grpc.SmartOffice.chatbots.ChatStatus.Builder.class);
   }
 
-  public static final int RECEIVEDMESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object receivedMessage_;
+  public static final int SENTMESSAGE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object sentMessage_;
   /**
-   * <code>string receivedMessage = 1;</code>
+   * <code>string sentMessage = 1;</code>
    */
-  public java.lang.String getReceivedMessage() {
-    java.lang.Object ref = receivedMessage_;
+  public java.lang.String getSentMessage() {
+    java.lang.Object ref = sentMessage_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      receivedMessage_ = s;
+      sentMessage_ = s;
       return s;
     }
   }
   /**
-   * <code>string receivedMessage = 1;</code>
+   * <code>string sentMessage = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getReceivedMessageBytes() {
-    java.lang.Object ref = receivedMessage_;
+      getSentMessageBytes() {
+    java.lang.Object ref = sentMessage_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      receivedMessage_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int RECEIVEDFROM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object receivedFrom_;
-  /**
-   * <code>string receivedFrom = 2;</code>
-   */
-  public java.lang.String getReceivedFrom() {
-    java.lang.Object ref = receivedFrom_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      receivedFrom_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string receivedFrom = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getReceivedFromBytes() {
-    java.lang.Object ref = receivedFrom_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      receivedFrom_ = b;
+      sentMessage_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -170,11 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getReceivedMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, receivedMessage_);
-    }
-    if (!getReceivedFromBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, receivedFrom_);
+    if (!getSentMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sentMessage_);
     }
     unknownFields.writeTo(output);
   }
@@ -185,11 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getReceivedMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, receivedMessage_);
-    }
-    if (!getReceivedFromBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, receivedFrom_);
+    if (!getSentMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sentMessage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -201,16 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof grpc.SmartOffice.chatbots.ReceiveChatMessage)) {
+    if (!(obj instanceof grpc.SmartOffice.chatbots.ChatStatus)) {
       return super.equals(obj);
     }
-    grpc.SmartOffice.chatbots.ReceiveChatMessage other = (grpc.SmartOffice.chatbots.ReceiveChatMessage) obj;
+    grpc.SmartOffice.chatbots.ChatStatus other = (grpc.SmartOffice.chatbots.ChatStatus) obj;
 
     boolean result = true;
-    result = result && getReceivedMessage()
-        .equals(other.getReceivedMessage());
-    result = result && getReceivedFrom()
-        .equals(other.getReceivedFrom());
+    result = result && getSentMessage()
+        .equals(other.getSentMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -222,78 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RECEIVEDMESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getReceivedMessage().hashCode();
-    hash = (37 * hash) + RECEIVEDFROM_FIELD_NUMBER;
-    hash = (53 * hash) + getReceivedFrom().hashCode();
+    hash = (37 * hash) + SENTMESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getSentMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(byte[] data)
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseDelimitedFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.chatbots.ChatStatus parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseDelimitedFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage parseFrom(
+  public static grpc.SmartOffice.chatbots.ChatStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -306,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(grpc.SmartOffice.chatbots.ReceiveChatMessage prototype) {
+  public static Builder newBuilder(grpc.SmartOffice.chatbots.ChatStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -322,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ReceiveChatMessage}
+   * Protobuf type {@code ChatStatus}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ReceiveChatMessage)
-      grpc.SmartOffice.chatbots.ReceiveChatMessageOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ChatStatus)
+      grpc.SmartOffice.chatbots.ChatStatusOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ReceiveChatMessage_descriptor;
+      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ChatStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ReceiveChatMessage_fieldAccessorTable
+      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ChatStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.SmartOffice.chatbots.ReceiveChatMessage.class, grpc.SmartOffice.chatbots.ReceiveChatMessage.Builder.class);
+              grpc.SmartOffice.chatbots.ChatStatus.class, grpc.SmartOffice.chatbots.ChatStatus.Builder.class);
     }
 
-    // Construct using grpc.SmartOffice.chatbots.ReceiveChatMessage.newBuilder()
+    // Construct using grpc.SmartOffice.chatbots.ChatStatus.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -359,9 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      receivedMessage_ = "";
-
-      receivedFrom_ = "";
+      sentMessage_ = "";
 
       return this;
     }
@@ -369,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ReceiveChatMessage_descriptor;
+      return grpc.SmartOffice.chatbots.ChatBotServiceImpl.internal_static_ChatStatus_descriptor;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbots.ReceiveChatMessage getDefaultInstanceForType() {
-      return grpc.SmartOffice.chatbots.ReceiveChatMessage.getDefaultInstance();
+    public grpc.SmartOffice.chatbots.ChatStatus getDefaultInstanceForType() {
+      return grpc.SmartOffice.chatbots.ChatStatus.getDefaultInstance();
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbots.ReceiveChatMessage build() {
-      grpc.SmartOffice.chatbots.ReceiveChatMessage result = buildPartial();
+    public grpc.SmartOffice.chatbots.ChatStatus build() {
+      grpc.SmartOffice.chatbots.ChatStatus result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -387,10 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbots.ReceiveChatMessage buildPartial() {
-      grpc.SmartOffice.chatbots.ReceiveChatMessage result = new grpc.SmartOffice.chatbots.ReceiveChatMessage(this);
-      result.receivedMessage_ = receivedMessage_;
-      result.receivedFrom_ = receivedFrom_;
+    public grpc.SmartOffice.chatbots.ChatStatus buildPartial() {
+      grpc.SmartOffice.chatbots.ChatStatus result = new grpc.SmartOffice.chatbots.ChatStatus(this);
+      result.sentMessage_ = sentMessage_;
       onBuilt();
       return result;
     }
@@ -429,22 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof grpc.SmartOffice.chatbots.ReceiveChatMessage) {
-        return mergeFrom((grpc.SmartOffice.chatbots.ReceiveChatMessage)other);
+      if (other instanceof grpc.SmartOffice.chatbots.ChatStatus) {
+        return mergeFrom((grpc.SmartOffice.chatbots.ChatStatus)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(grpc.SmartOffice.chatbots.ReceiveChatMessage other) {
-      if (other == grpc.SmartOffice.chatbots.ReceiveChatMessage.getDefaultInstance()) return this;
-      if (!other.getReceivedMessage().isEmpty()) {
-        receivedMessage_ = other.receivedMessage_;
-        onChanged();
-      }
-      if (!other.getReceivedFrom().isEmpty()) {
-        receivedFrom_ = other.receivedFrom_;
+    public Builder mergeFrom(grpc.SmartOffice.chatbots.ChatStatus other) {
+      if (other == grpc.SmartOffice.chatbots.ChatStatus.getDefaultInstance()) return this;
+      if (!other.getSentMessage().isEmpty()) {
+        sentMessage_ = other.sentMessage_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -462,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      grpc.SmartOffice.chatbots.ReceiveChatMessage parsedMessage = null;
+      grpc.SmartOffice.chatbots.ChatStatus parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (grpc.SmartOffice.chatbots.ReceiveChatMessage) e.getUnfinishedMessage();
+        parsedMessage = (grpc.SmartOffice.chatbots.ChatStatus) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -476,140 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object receivedMessage_ = "";
+    private java.lang.Object sentMessage_ = "";
     /**
-     * <code>string receivedMessage = 1;</code>
+     * <code>string sentMessage = 1;</code>
      */
-    public java.lang.String getReceivedMessage() {
-      java.lang.Object ref = receivedMessage_;
+    public java.lang.String getSentMessage() {
+      java.lang.Object ref = sentMessage_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        receivedMessage_ = s;
+        sentMessage_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string receivedMessage = 1;</code>
+     * <code>string sentMessage = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getReceivedMessageBytes() {
-      java.lang.Object ref = receivedMessage_;
+        getSentMessageBytes() {
+      java.lang.Object ref = sentMessage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        receivedMessage_ = b;
+        sentMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string receivedMessage = 1;</code>
+     * <code>string sentMessage = 1;</code>
      */
-    public Builder setReceivedMessage(
+    public Builder setSentMessage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      receivedMessage_ = value;
+      sentMessage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string receivedMessage = 1;</code>
+     * <code>string sentMessage = 1;</code>
      */
-    public Builder clearReceivedMessage() {
+    public Builder clearSentMessage() {
       
-      receivedMessage_ = getDefaultInstance().getReceivedMessage();
+      sentMessage_ = getDefaultInstance().getSentMessage();
       onChanged();
       return this;
     }
     /**
-     * <code>string receivedMessage = 1;</code>
+     * <code>string sentMessage = 1;</code>
      */
-    public Builder setReceivedMessageBytes(
+    public Builder setSentMessageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      receivedMessage_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object receivedFrom_ = "";
-    /**
-     * <code>string receivedFrom = 2;</code>
-     */
-    public java.lang.String getReceivedFrom() {
-      java.lang.Object ref = receivedFrom_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        receivedFrom_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string receivedFrom = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getReceivedFromBytes() {
-      java.lang.Object ref = receivedFrom_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        receivedFrom_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string receivedFrom = 2;</code>
-     */
-    public Builder setReceivedFrom(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      receivedFrom_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string receivedFrom = 2;</code>
-     */
-    public Builder clearReceivedFrom() {
-      
-      receivedFrom_ = getDefaultInstance().getReceivedFrom();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string receivedFrom = 2;</code>
-     */
-    public Builder setReceivedFromBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      receivedFrom_ = value;
+      sentMessage_ = value;
       onChanged();
       return this;
     }
@@ -626,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ReceiveChatMessage)
+    // @@protoc_insertion_point(builder_scope:ChatStatus)
   }
 
-  // @@protoc_insertion_point(class_scope:ReceiveChatMessage)
-  private static final grpc.SmartOffice.chatbots.ReceiveChatMessage DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ChatStatus)
+  private static final grpc.SmartOffice.chatbots.ChatStatus DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new grpc.SmartOffice.chatbots.ReceiveChatMessage();
+    DEFAULT_INSTANCE = new grpc.SmartOffice.chatbots.ChatStatus();
   }
 
-  public static grpc.SmartOffice.chatbots.ReceiveChatMessage getDefaultInstance() {
+  public static grpc.SmartOffice.chatbots.ChatStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReceiveChatMessage>
-      PARSER = new com.google.protobuf.AbstractParser<ReceiveChatMessage>() {
+  private static final com.google.protobuf.Parser<ChatStatus>
+      PARSER = new com.google.protobuf.AbstractParser<ChatStatus>() {
     @java.lang.Override
-    public ReceiveChatMessage parsePartialFrom(
+    public ChatStatus parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReceiveChatMessage(input, extensionRegistry);
+      return new ChatStatus(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ReceiveChatMessage> parser() {
+  public static com.google.protobuf.Parser<ChatStatus> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReceiveChatMessage> getParserForType() {
+  public com.google.protobuf.Parser<ChatStatus> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public grpc.SmartOffice.chatbots.ReceiveChatMessage getDefaultInstanceForType() {
+  public grpc.SmartOffice.chatbots.ChatStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
