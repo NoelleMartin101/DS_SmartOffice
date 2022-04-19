@@ -6,9 +6,17 @@ option java_outer_classname = "DocumentRepositoryImpl";
 
 service documentRepository{
 	rpc retrieveDocument(stream RequestedDocument) returns (stream RequestedDocument){}
+	rpc retrieveFolderList(FolderLocation) returns (stream FolderContents){}
 	rpc sendDocument(stream SentDocument) returns (NewDocumentPath);
 	rpc deleteDocument(stream DeleteDocument) returns (Empty);
 	rpc updateDocument(stream UpdateDocument) returns (Empty);
+}
+
+message FolderLocation{
+	string message = 1;
+}
+message FolderContents{
+	string filesList = 1;
 }
 
 message Empty{}

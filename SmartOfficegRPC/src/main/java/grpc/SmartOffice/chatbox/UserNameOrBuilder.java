@@ -3,8 +3,8 @@
 
 package grpc.SmartOffice.chatbox;
 
-public interface userOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:user)
+public interface UserNameOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:UserName)
     com.google.protobuf.MessageOrBuilder {
 
   /**

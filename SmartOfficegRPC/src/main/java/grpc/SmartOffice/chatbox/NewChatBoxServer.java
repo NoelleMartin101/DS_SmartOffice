@@ -9,16 +9,14 @@ import java.util.Properties;
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 
-
 import grpc.SmartOffice.chatbox.chatBoxServiceGrpc.chatBoxServiceImplBase;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 
-public class NewChatBoxServer{
+public class NewChatBoxServer extends chatBoxServiceImplBase{
 	
-	private Server server;
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		NewChatBoxServer chatBoxServer = new NewChatBoxServer();
@@ -26,64 +24,55 @@ public class NewChatBoxServer{
 		Properties prop = chatBoxServer.getProperties();
 		
 		chatBoxServer.registerService(prop);
-		chatBoxServer.start();
-	}
-	private void start() throws IOException, InterruptedException {
 		System.out.println("Starting gRPC Server");
 		int port = 50051; 
-		server = ServerBuilder.forPort(port).addService(new NewChatBoxServerImpl()).build().start();
+		Server server = ServerBuilder.forPort(port).addService(chatBoxServer).build().start();
 				//.addService(new ChatBoxServiceImpl()).build().start();	
 		System.out.println("Server is running on port " + port);
 		
 		server.awaitTermination();
 	}
-	static class NewChatBoxServerImpl extends chatBoxServiceImplBase{
-		//@Override
-		public void getChatStatus(user request, StreamObserver<chatStatus> responseObserver) {
-			String user = request.getUserName();
-			System.out.println("We are getting the chat status for " + user);
-			/*
-			String uStatus;
-			if(user == "1") uStatus = "Away";
-			else if(user == "2") uStatus = "Busy";
-			else if(user == "3") uStatus = "Available";
-			else uStatus = "Unknown";			
-			System.out.println("User Name: " + user);
-			System.out.println("User Status: " + uStatus);
-			*/
-			
-			//now build response
-			chatStatus.Builder responseBuilder = chatStatus.newBuilder();
-			
-			responseBuilder.setUserStatus("Available");
-			
-			responseObserver.onNext(responseBuilder.build());
-			responseObserver.onCompleted();
-		}	
 		
-		//@Override
-		public StreamObserver<sendChatMessage> getChatMessages(StreamObserver<receiveChatMessage> responseObserver) {
-		    return new StreamObserver<sendChatMessage>() {
-		        @Override
-		        public void onNext(sendChatMessage request) {
-		            for (int i = 1; i <= 5; i++) {
-		            	receiveChatMessage responseBuilder =  receiveChatMessage.newBuilder().build();
-		                responseObserver.onNext(responseBuilder);
-		            }
-		        }
+	public void getChatStatus(UserName request, StreamObserver<UserStatus>responseObserver)
+	{
+		System.out.println("Getting the chat status for " + request.getUserName());
+				
+		String chatStatus = "Available";
+		if(request.getUserName() == "Noelle")
+			chatStatus = "Available";
+		else if(request.getUserName() == "John")
+			chatStatus = "Away";
+		else if(request.getUserName() == "Ann")
+			chatStatus = "Busy";
+		//Allow the Client/GUI to handle the message to go with the chatStatus
+		UserStatus reply = UserStatus.newBuilder().setChatStatus(chatStatus).build();
+			
+		responseObserver.onNext(reply);
+		responseObserver.onCompleted();
+	}
+	
+	@Override
+	public StreamObserver<SendMessage> getChatMessages(StreamObserver<ReceiveMessage> responseObserver) {
+	    return new StreamObserver<SendMessage>() {
+	        @Override
+	        public void onNext(SendMessage request) {
+	        	System.out.println("Recieving getChatMessages");
+	            	ReceiveMessage responseBuilder =  ReceiveMessage.newBuilder().build();
+	                responseObserver.onNext(responseBuilder);
+	        }
 
-		        @Override
-		        public void onCompleted() {
-		            responseObserver.onCompleted();
-		        }
+	        @Override
+	        public void onCompleted() {
+	        	System.out.println("receiving getChatMessages completed ");
+	            responseObserver.onCompleted();
+	        }
 
-				@Override
-				public void onError(Throwable t) {
-					
-				}
+			@Override
+			public void onError(Throwable t) {
+				t.printStackTrace();				
+			}
 
-		    };
-		}
+	    };
 	}
 	
 	
@@ -114,7 +103,7 @@ public class NewChatBoxServer{
 	            // Register a service
 	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
 	            jmdns.registerService(serviceInfo);	            
-	            System.out.printf("registrering service with type %s and name %s \n", service_type, service_name);
+	            System.out.printf("Registering service with type %s and name %s \n", service_type, service_name);
 	            
 	            // Wait a bit
 	            Thread.sleep(1000);

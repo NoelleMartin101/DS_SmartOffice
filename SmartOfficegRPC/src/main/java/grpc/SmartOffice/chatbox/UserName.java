@@ -4,19 +4,19 @@
 package grpc.SmartOffice.chatbox;
 
 /**
- * Protobuf type {@code chatStatus}
+ * Protobuf type {@code UserName}
  */
-public  final class chatStatus extends
+public  final class UserName extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:chatStatus)
-    chatStatusOrBuilder {
+    // @@protoc_insertion_point(message_implements:UserName)
+    UserNameOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use chatStatus.newBuilder() to construct.
-  private chatStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UserName.newBuilder() to construct.
+  private UserName(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private chatStatus() {
-    userStatus_ = "";
+  private UserName() {
+    userName_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private chatStatus(
+  private UserName(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userStatus_ = s;
+            userName_ = s;
             break;
           }
           default: {
@@ -70,45 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_chatStatus_descriptor;
+    return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_UserName_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_chatStatus_fieldAccessorTable
+    return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_UserName_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            grpc.SmartOffice.chatbox.chatStatus.class, grpc.SmartOffice.chatbox.chatStatus.Builder.class);
+            grpc.SmartOffice.chatbox.UserName.class, grpc.SmartOffice.chatbox.UserName.Builder.class);
   }
 
-  public static final int USERSTATUS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object userStatus_;
+  public static final int USERNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object userName_;
   /**
-   * <code>string userStatus = 1;</code>
+   * <code>string userName = 1;</code>
    */
-  public java.lang.String getUserStatus() {
-    java.lang.Object ref = userStatus_;
+  public java.lang.String getUserName() {
+    java.lang.Object ref = userName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userStatus_ = s;
+      userName_ = s;
       return s;
     }
   }
   /**
-   * <code>string userStatus = 1;</code>
+   * <code>string userName = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getUserStatusBytes() {
-    java.lang.Object ref = userStatus_;
+      getUserNameBytes() {
+    java.lang.Object ref = userName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userStatus_ = b;
+      userName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userStatus_);
+    if (!getUserNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userName_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userStatus_);
+    if (!getUserNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof grpc.SmartOffice.chatbox.chatStatus)) {
+    if (!(obj instanceof grpc.SmartOffice.chatbox.UserName)) {
       return super.equals(obj);
     }
-    grpc.SmartOffice.chatbox.chatStatus other = (grpc.SmartOffice.chatbox.chatStatus) obj;
+    grpc.SmartOffice.chatbox.UserName other = (grpc.SmartOffice.chatbox.UserName) obj;
 
     boolean result = true;
-    result = result && getUserStatus()
-        .equals(other.getUserStatus());
+    result = result && getUserName()
+        .equals(other.getUserName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERSTATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getUserStatus().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(byte[] data)
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseDelimitedFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.chatbox.UserName parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseDelimitedFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.chatbox.chatStatus parseFrom(
+  public static grpc.SmartOffice.chatbox.UserName parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(grpc.SmartOffice.chatbox.chatStatus prototype) {
+  public static Builder newBuilder(grpc.SmartOffice.chatbox.UserName prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code chatStatus}
+   * Protobuf type {@code UserName}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:chatStatus)
-      grpc.SmartOffice.chatbox.chatStatusOrBuilder {
+      // @@protoc_insertion_point(builder_implements:UserName)
+      grpc.SmartOffice.chatbox.UserNameOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_chatStatus_descriptor;
+      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_UserName_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_chatStatus_fieldAccessorTable
+      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_UserName_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.SmartOffice.chatbox.chatStatus.class, grpc.SmartOffice.chatbox.chatStatus.Builder.class);
+              grpc.SmartOffice.chatbox.UserName.class, grpc.SmartOffice.chatbox.UserName.Builder.class);
     }
 
-    // Construct using grpc.SmartOffice.chatbox.chatStatus.newBuilder()
+    // Construct using grpc.SmartOffice.chatbox.UserName.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userStatus_ = "";
+      userName_ = "";
 
       return this;
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_chatStatus_descriptor;
+      return grpc.SmartOffice.chatbox.ChatBoxServiceImpl.internal_static_UserName_descriptor;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbox.chatStatus getDefaultInstanceForType() {
-      return grpc.SmartOffice.chatbox.chatStatus.getDefaultInstance();
+    public grpc.SmartOffice.chatbox.UserName getDefaultInstanceForType() {
+      return grpc.SmartOffice.chatbox.UserName.getDefaultInstance();
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbox.chatStatus build() {
-      grpc.SmartOffice.chatbox.chatStatus result = buildPartial();
+    public grpc.SmartOffice.chatbox.UserName build() {
+      grpc.SmartOffice.chatbox.UserName result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.chatbox.chatStatus buildPartial() {
-      grpc.SmartOffice.chatbox.chatStatus result = new grpc.SmartOffice.chatbox.chatStatus(this);
-      result.userStatus_ = userStatus_;
+    public grpc.SmartOffice.chatbox.UserName buildPartial() {
+      grpc.SmartOffice.chatbox.UserName result = new grpc.SmartOffice.chatbox.UserName(this);
+      result.userName_ = userName_;
       onBuilt();
       return result;
     }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof grpc.SmartOffice.chatbox.chatStatus) {
-        return mergeFrom((grpc.SmartOffice.chatbox.chatStatus)other);
+      if (other instanceof grpc.SmartOffice.chatbox.UserName) {
+        return mergeFrom((grpc.SmartOffice.chatbox.UserName)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(grpc.SmartOffice.chatbox.chatStatus other) {
-      if (other == grpc.SmartOffice.chatbox.chatStatus.getDefaultInstance()) return this;
-      if (!other.getUserStatus().isEmpty()) {
-        userStatus_ = other.userStatus_;
+    public Builder mergeFrom(grpc.SmartOffice.chatbox.UserName other) {
+      if (other == grpc.SmartOffice.chatbox.UserName.getDefaultInstance()) return this;
+      if (!other.getUserName().isEmpty()) {
+        userName_ = other.userName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      grpc.SmartOffice.chatbox.chatStatus parsedMessage = null;
+      grpc.SmartOffice.chatbox.UserName parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (grpc.SmartOffice.chatbox.chatStatus) e.getUnfinishedMessage();
+        parsedMessage = (grpc.SmartOffice.chatbox.UserName) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userStatus_ = "";
+    private java.lang.Object userName_ = "";
     /**
-     * <code>string userStatus = 1;</code>
+     * <code>string userName = 1;</code>
      */
-    public java.lang.String getUserStatus() {
-      java.lang.Object ref = userStatus_;
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userStatus_ = s;
+        userName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string userStatus = 1;</code>
+     * <code>string userName = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUserStatusBytes() {
-      java.lang.Object ref = userStatus_;
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userStatus_ = b;
+        userName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string userStatus = 1;</code>
+     * <code>string userName = 1;</code>
      */
-    public Builder setUserStatus(
+    public Builder setUserName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      userStatus_ = value;
+      userName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string userStatus = 1;</code>
+     * <code>string userName = 1;</code>
      */
-    public Builder clearUserStatus() {
+    public Builder clearUserName() {
       
-      userStatus_ = getDefaultInstance().getUserStatus();
+      userName_ = getDefaultInstance().getUserName();
       onChanged();
       return this;
     }
     /**
-     * <code>string userStatus = 1;</code>
+     * <code>string userName = 1;</code>
      */
-    public Builder setUserStatusBytes(
+    public Builder setUserNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      userStatus_ = value;
+      userName_ = value;
       onChanged();
       return this;
     }
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:chatStatus)
+    // @@protoc_insertion_point(builder_scope:UserName)
   }
 
-  // @@protoc_insertion_point(class_scope:chatStatus)
-  private static final grpc.SmartOffice.chatbox.chatStatus DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:UserName)
+  private static final grpc.SmartOffice.chatbox.UserName DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new grpc.SmartOffice.chatbox.chatStatus();
+    DEFAULT_INSTANCE = new grpc.SmartOffice.chatbox.UserName();
   }
 
-  public static grpc.SmartOffice.chatbox.chatStatus getDefaultInstance() {
+  public static grpc.SmartOffice.chatbox.UserName getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<chatStatus>
-      PARSER = new com.google.protobuf.AbstractParser<chatStatus>() {
+  private static final com.google.protobuf.Parser<UserName>
+      PARSER = new com.google.protobuf.AbstractParser<UserName>() {
     @java.lang.Override
-    public chatStatus parsePartialFrom(
+    public UserName parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new chatStatus(input, extensionRegistry);
+      return new UserName(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<chatStatus> parser() {
+  public static com.google.protobuf.Parser<UserName> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<chatStatus> getParserForType() {
+  public com.google.protobuf.Parser<UserName> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public grpc.SmartOffice.chatbox.chatStatus getDefaultInstanceForType() {
+  public grpc.SmartOffice.chatbox.UserName getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

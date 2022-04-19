@@ -5,21 +5,23 @@ option java_package = "grpc.SmartOffice.chatbox";
 option java_outer_classname = "ChatBoxServiceImpl";
 
 service chatBoxService{
-	rpc GetChatMessages(stream sendChatMessage) returns (stream receiveChatMessage){}//Bi-Directional
-	rpc GetChatStatus(user) returns(chatStatus){} //unary
+	rpc getChatMessages(stream SendMessage) returns (stream ReceiveMessage){}//Bi-Directional
+	rpc getChatStatus(UserName) returns(UserStatus){} //unary
 }
 
-message sendChatMessage{
+message SendMessage{
 	string sentMessage = 1;
-	string sentTo = 2;
+	string messageTo = 2;
+	string messageTime = 3;
 }
-message receiveChatMessage{
+message ReceiveMessage{
 	string receivedMessage = 1;
-	string receivedFrom = 2;
+	string messageFrom = 2;
+	string messageTime = 3;
 }
-message user{
+message UserName{
 	string userName = 1;
 	}
-message chatStatus{
-	string userStatus = 1;
+message UserStatus{
+	string chatStatus = 1;
 }

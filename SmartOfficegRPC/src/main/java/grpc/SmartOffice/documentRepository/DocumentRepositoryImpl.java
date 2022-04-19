@@ -15,6 +15,16 @@ public final class DocumentRepositoryImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FolderLocation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FolderLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FolderContents_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FolderContents_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Empty_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -53,20 +63,23 @@ public final class DocumentRepositoryImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030documentRepository.proto\"\007\n\005Empty\"$\n\021R" +
-      "equestedDocument\022\017\n\007docName\030\001 \001(\t\"\037\n\014Sen" +
-      "tDocument\022\017\n\007docName\030\001 \001(\t\"!\n\016DeleteDocu" +
-      "ment\022\017\n\007docName\030\001 \001(\t\"!\n\016UpdateDocument\022" +
-      "\017\n\007docName\030\001 \001(\t\"*\n\017NewDocumentPath\022\027\n\017n" +
-      "ewDocumentPath\030\001 \001(\t2\343\001\n\022documentReposit" +
-      "ory\022@\n\020retrieveDocument\022\022.RequestedDocum" +
-      "ent\032\022.RequestedDocument\"\000(\0010\001\0221\n\014sendDoc" +
-      "ument\022\r.SentDocument\032\020.NewDocumentPath(\001" +
-      "\022+\n\016deleteDocument\022\017.DeleteDocument\032\006.Em" +
-      "pty(\001\022+\n\016updateDocument\022\017.UpdateDocument" +
-      "\032\006.Empty(\001B?\n#grpc.SmartOffice.documentR" +
-      "epositoryB\026DocumentRepositoryImplP\001b\006pro" +
-      "to3"
+      "\n\030documentRepository.proto\"!\n\016FolderLoca" +
+      "tion\022\017\n\007message\030\001 \001(\t\"#\n\016FolderContents\022" +
+      "\021\n\tfilesList\030\001 \001(\t\"\007\n\005Empty\"$\n\021Requested" +
+      "Document\022\017\n\007docName\030\001 \001(\t\"\037\n\014SentDocumen" +
+      "t\022\017\n\007docName\030\001 \001(\t\"!\n\016DeleteDocument\022\017\n\007" +
+      "docName\030\001 \001(\t\"!\n\016UpdateDocument\022\017\n\007docNa" +
+      "me\030\001 \001(\t\"*\n\017NewDocumentPath\022\027\n\017newDocume" +
+      "ntPath\030\001 \001(\t2\237\002\n\022documentRepository\022@\n\020r" +
+      "etrieveDocument\022\022.RequestedDocument\032\022.Re" +
+      "questedDocument\"\000(\0010\001\022:\n\022retrieveFolderL" +
+      "ist\022\017.FolderLocation\032\017.FolderContents\"\0000" +
+      "\001\0221\n\014sendDocument\022\r.SentDocument\032\020.NewDo" +
+      "cumentPath(\001\022+\n\016deleteDocument\022\017.DeleteD" +
+      "ocument\032\006.Empty(\001\022+\n\016updateDocument\022\017.Up" +
+      "dateDocument\032\006.Empty(\001B?\n#grpc.SmartOffi" +
+      "ce.documentRepositoryB\026DocumentRepositor" +
+      "yImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -80,38 +93,50 @@ public final class DocumentRepositoryImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_Empty_descriptor =
+    internal_static_FolderLocation_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_FolderLocation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FolderLocation_descriptor,
+        new java.lang.String[] { "Message", });
+    internal_static_FolderContents_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_FolderContents_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FolderContents_descriptor,
+        new java.lang.String[] { "FilesList", });
+    internal_static_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,
         new java.lang.String[] { });
     internal_static_RequestedDocument_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_RequestedDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RequestedDocument_descriptor,
         new java.lang.String[] { "DocName", });
     internal_static_SentDocument_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_SentDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SentDocument_descriptor,
         new java.lang.String[] { "DocName", });
     internal_static_DeleteDocument_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_DeleteDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeleteDocument_descriptor,
         new java.lang.String[] { "DocName", });
     internal_static_UpdateDocument_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_UpdateDocument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateDocument_descriptor,
         new java.lang.String[] { "DocName", });
     internal_static_NewDocumentPath_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_NewDocumentPath_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NewDocumentPath_descriptor,
