@@ -60,7 +60,6 @@ public class NewChatBoxClient{
 				t.printStackTrace();				
 			}
 
-
 			@Override
 			public void onCompleted() {
 				System.out.println("stream is completed");

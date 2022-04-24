@@ -2,9 +2,8 @@ package grpc.SmartOffice.documentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryBlockingStub;
 import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryStub;
@@ -33,47 +32,31 @@ public class DocumentRepositoryClient{
 	public static void GetFolderListing()
 	{
 		List<String> fileNames = new ArrayList<>();
-	    final CountDownLatch finishLatch = new CountDownLatch(1);
-	    final AtomicBoolean completed = new AtomicBoolean(false);
-	    String folderLocation = "";
+	    FolderLocation request = FolderLocation.newBuilder().build();
 	    
-	    StreamObserver<FolderListing> streamObserver = new StreamObserver<FolderListing>() {
+	    StreamObserver<FolderListing> responseObserver = new StreamObserver<FolderListing>() {
 	        @Override
-	        public void onNext(FolderListing value) {
-	            try{
-	                fileNames.add(value.getFileName());
-	            }catch (Exception e){
-	            	e.printStackTrace();
-	            }
-
+	        public void onNext(FolderListing filename) {	            
+	                fileNames.add(filename.getFolderListing());	           
 	        }
 
 	        @Override
-	        public void onError(Throwable t) {
-	        	t.printStackTrace();
-	            finishLatch.countDown();
-	        }
+			public void onError(Throwable t) {
+				t.printStackTrace();				
+			}
 
-	        @Override
-	        public void onCompleted() {
+			@Override
+			public void onCompleted() {
 				System.out.println("stream is completed");
-	            completed.compareAndSet(false, true);
-	            finishLatch.countDown();
-	        }
+			}
 	    };
-
+	    asyncStub.retrieveFolderList(request, responseObserver);
+	    
 	    try {
-	    	asyncStub.retrieveFolderList(folderLocation, streamObserver);
-	        finishLatch.await(5, TimeUnit.MINUTES);
-
-	        if (!completed.get()) {
-	            throw new Exception("The downloadFile() method did not complete");
-	        }
-
-	    } catch (Exception e) {
-			System.out.println("Listing the files did not complete");
-	    }
-
-	    return fileNames;
+			Thread.sleep(15000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}	
 }

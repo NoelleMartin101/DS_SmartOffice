@@ -34,7 +34,7 @@ public final class documentRepositoryGrpc {
       fullMethodName = SERVICE_NAME + '/' + "retrieveDocument",
       requestType = grpc.SmartOffice.documentRepository.RequestedDocument.class,
       responseType = grpc.SmartOffice.documentRepository.RequestedDocument.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.RequestedDocument,
       grpc.SmartOffice.documentRepository.RequestedDocument> getRetrieveDocumentMethod() {
     io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.RequestedDocument, grpc.SmartOffice.documentRepository.RequestedDocument> getRetrieveDocumentMethod;
@@ -43,7 +43,7 @@ public final class documentRepositoryGrpc {
         if ((getRetrieveDocumentMethod = documentRepositoryGrpc.getRetrieveDocumentMethod) == null) {
           documentRepositoryGrpc.getRetrieveDocumentMethod = getRetrieveDocumentMethod = 
               io.grpc.MethodDescriptor.<grpc.SmartOffice.documentRepository.RequestedDocument, grpc.SmartOffice.documentRepository.RequestedDocument>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "documentRepository", "retrieveDocument"))
               .setSampledToLocalTracing(true)
@@ -216,9 +216,9 @@ public final class documentRepositoryGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument> retrieveDocument(
+    public void retrieveDocument(grpc.SmartOffice.documentRepository.RequestedDocument request,
         io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument> responseObserver) {
-      return asyncUnimplementedStreamingCall(getRetrieveDocumentMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getRetrieveDocumentMethod(), responseObserver);
     }
 
     /**
@@ -253,7 +253,7 @@ public final class documentRepositoryGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getRetrieveDocumentMethod(),
-            asyncBidiStreamingCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 grpc.SmartOffice.documentRepository.RequestedDocument,
                 grpc.SmartOffice.documentRepository.RequestedDocument>(
@@ -310,10 +310,10 @@ public final class documentRepositoryGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument> retrieveDocument(
+    public void retrieveDocument(grpc.SmartOffice.documentRepository.RequestedDocument request,
         io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument> responseObserver) {
-      return asyncBidiStreamingCall(
-          getChannel().newCall(getRetrieveDocumentMethod(), getCallOptions()), responseObserver);
+      asyncServerStreamingCall(
+          getChannel().newCall(getRetrieveDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -369,6 +369,14 @@ public final class documentRepositoryGrpc {
 
     /**
      */
+    public java.util.Iterator<grpc.SmartOffice.documentRepository.RequestedDocument> retrieveDocument(
+        grpc.SmartOffice.documentRepository.RequestedDocument request) {
+      return blockingServerStreamingCall(
+          getChannel(), getRetrieveDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public java.util.Iterator<grpc.SmartOffice.documentRepository.FolderListing> retrieveFolderList(
         grpc.SmartOffice.documentRepository.FolderLocation request) {
       return blockingServerStreamingCall(
@@ -395,8 +403,8 @@ public final class documentRepositoryGrpc {
     }
   }
 
-  private static final int METHODID_RETRIEVE_FOLDER_LIST = 0;
-  private static final int METHODID_RETRIEVE_DOCUMENT = 1;
+  private static final int METHODID_RETRIEVE_DOCUMENT = 0;
+  private static final int METHODID_RETRIEVE_FOLDER_LIST = 1;
   private static final int METHODID_SEND_DOCUMENT = 2;
   private static final int METHODID_DELETE_DOCUMENT = 3;
   private static final int METHODID_UPDATE_DOCUMENT = 4;
@@ -418,6 +426,10 @@ public final class documentRepositoryGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_RETRIEVE_DOCUMENT:
+          serviceImpl.retrieveDocument((grpc.SmartOffice.documentRepository.RequestedDocument) request,
+              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument>) responseObserver);
+          break;
         case METHODID_RETRIEVE_FOLDER_LIST:
           serviceImpl.retrieveFolderList((grpc.SmartOffice.documentRepository.FolderLocation) request,
               (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderListing>) responseObserver);
@@ -432,9 +444,6 @@ public final class documentRepositoryGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_RETRIEVE_DOCUMENT:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.retrieveDocument(
-              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.RequestedDocument>) responseObserver);
         case METHODID_SEND_DOCUMENT:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.sendDocument(
               (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.NewDocumentPath>) responseObserver);

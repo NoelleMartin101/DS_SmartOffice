@@ -19,8 +19,8 @@ public class DocumentRepositoryServer extends documentRepositoryImplBase {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		DocumentRepositoryServer documentServer = new DocumentRepositoryServer();
-		Properties prop = documentServer.getProperties();
-		documentServer.registerService(prop);
+		//Properties prop = documentServer.getProperties();
+		//documentServer.registerService(prop);
 
 		System.out.println("Starting gRPC Server");
 		int port = 50051; 
@@ -32,12 +32,15 @@ public class DocumentRepositoryServer extends documentRepositoryImplBase {
 	@Override
 	public void retrieveFolderList(FolderLocation request, StreamObserver<FolderListing> responseObserver) {
 		System.out.println("Getting folder listings" );
+		
+		String folderLocation = request.toString();		
 		String[] filenames;
-		File f = new File("files");
+		//File f = new File(folderLocation);
+		File f = new File("C:/Users/Noelle/Dropbox/College - NCIRL/Distributed Systems");
 		filenames = f.list();
-		for (String pathname : filenames)
+		for (String file : filenames)
 		{
-			responseObserver.onNext(FolderListing.newBuilder().setFolderListing(pathname).build());
+			responseObserver.onNext(FolderListing.newBuilder().setFolderListing(file).build());
 		}
 		responseObserver.onCompleted();
 	}

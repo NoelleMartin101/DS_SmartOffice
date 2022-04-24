@@ -5,7 +5,7 @@ option java_package = "grpc.SmartOffice.documentRepository";
 option java_outer_classname = "DocumentRepositoryImpl";
 
 service documentRepository{
-	rpc retrieveDocument(stream RequestedDocument) returns (stream RequestedDocument){}
+	rpc retrieveDocument(RequestedDocument) returns (stream RequestedDocument){}
 	rpc retrieveFolderList(FolderLocation) returns (stream FolderListing){}
 	rpc sendDocument(stream SentDocument) returns (NewDocumentPath);
 	rpc deleteDocument(stream DeleteDocument) returns (Empty);

@@ -36,11 +36,13 @@ C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartO
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\NewDocumentPathOrBuilder.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbox\UserName.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\chatbox\UserStatusOrBuilder.java
+C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\DocumentRepositoryClient.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\roomAccess\RoomAvailableOrBuilder.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\DocumentRepositoryServer.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\userAccess\LoginStatus.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\userAccess\Empty.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\NewDocumentPath.java
+C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\DocumentRepositoryGUI.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\FolderListingOrBuilder.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\roomAccess\BoookedBy.java
 C:\Users\Noelle\Dropbox\College - NCIRL\Distributed Systems\Assignment\DS_SmartOffice\SmartOfficegRPC\src\main\java\grpc\SmartOffice\documentRepository\UpdateDocument.java

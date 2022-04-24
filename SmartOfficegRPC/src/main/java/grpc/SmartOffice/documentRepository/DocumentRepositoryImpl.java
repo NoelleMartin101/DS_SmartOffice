@@ -76,16 +76,16 @@ public final class DocumentRepositoryImpl {
       "\n\007docName\030\001 \001(\t\"!\n\016DeleteDocument\022\017\n\007doc" +
       "Name\030\001 \001(\t\"!\n\016UpdateDocument\022\017\n\007docName\030" +
       "\001 \001(\t\"*\n\017NewDocumentPath\022\027\n\017newDocumentP" +
-      "ath\030\001 \001(\t2\236\002\n\022documentRepository\022@\n\020retr" +
+      "ath\030\001 \001(\t2\234\002\n\022documentRepository\022>\n\020retr" +
       "ieveDocument\022\022.RequestedDocument\032\022.Reque" +
-      "stedDocument\"\000(\0010\001\0229\n\022retrieveFolderList" +
-      "\022\017.FolderLocation\032\016.FolderListing\"\0000\001\0221\n" +
-      "\014sendDocument\022\r.SentDocument\032\020.NewDocume" +
-      "ntPath(\001\022+\n\016deleteDocument\022\017.DeleteDocum" +
-      "ent\032\006.Empty(\001\022+\n\016updateDocument\022\017.Update" +
-      "Document\032\006.Empty(\001B?\n#grpc.SmartOffice.d" +
-      "ocumentRepositoryB\026DocumentRepositoryImp" +
-      "lP\001b\006proto3"
+      "stedDocument\"\0000\001\0229\n\022retrieveFolderList\022\017" +
+      ".FolderLocation\032\016.FolderListing\"\0000\001\0221\n\014s" +
+      "endDocument\022\r.SentDocument\032\020.NewDocument" +
+      "Path(\001\022+\n\016deleteDocument\022\017.DeleteDocumen" +
+      "t\032\006.Empty(\001\022+\n\016updateDocument\022\017.UpdateDo" +
+      "cument\032\006.Empty(\001B?\n#grpc.SmartOffice.doc" +
+      "umentRepositoryB\026DocumentRepositoryImplP" +
+      "\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
