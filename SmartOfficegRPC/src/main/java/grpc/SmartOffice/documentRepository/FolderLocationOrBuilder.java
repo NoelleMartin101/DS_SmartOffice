@@ -8,12 +8,12 @@ public interface FolderLocationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>string path = 1;</code>
    */
-  java.lang.String getMessage();
+  java.lang.String getPath();
   /**
-   * <code>string message = 1;</code>
+   * <code>string path = 1;</code>
    */
   com.google.protobuf.ByteString
-      getMessageBytes();
+      getPathBytes();
 }

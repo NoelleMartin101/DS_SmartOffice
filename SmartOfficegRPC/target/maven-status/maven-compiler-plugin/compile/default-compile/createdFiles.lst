@@ -3,14 +3,13 @@ grpc\SmartOffice\documentRepository\documentRepositoryGrpc$1.class
 grpc\SmartOffice\roomAccess\RoomBooking$Builder.class
 grpc\SmartOffice\chatbox\ReceiveMessageOrBuilder.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc$documentRepositoryFileDescriptorSupplier.class
+grpc\SmartOffice\documentRepository\FolderListing$1.class
 grpc\SmartOffice\roomAccess\RoomBookedOrBuilder.class
 grpc\SmartOffice\userAccess\LoginStatus.class
-grpc\SmartOffice\chatbox\ChatBoxGUI.class
 grpc\SmartOffice\roomAccess\RoomBooked$1.class
 grpc\SmartOffice\documentRepository\NewDocumentPathOrBuilder.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc$documentRepositoryStub.class
 grpc\SmartOffice\roomAccess\RoomBookingOrBuilder.class
-grpc\SmartOffice\documentRepository\FolderContents$1.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc.class
 grpc\SmartOffice\roomAccess\RoomStatus$Builder.class
 grpc\SmartOffice\chatbox\ReceiveMessage$Builder.class
@@ -26,6 +25,7 @@ grpc\SmartOffice\roomAccess\RoomAvailable$1.class
 grpc\SmartOffice\chatbox\chatBoxServiceGrpc$1.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc$documentRepositoryBlockingStub.class
 grpc\SmartOffice\userAccess\Empty$Builder.class
+grpc\SmartOffice\documentRepository\FolderListingOrBuilder.class
 grpc\SmartOffice\chatbox\UserStatusOrBuilder.class
 grpc\SmartOffice\roomAccess\roomAccessGrpc$roomAccessBlockingStub.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc$documentRepositoryImplBase.class
@@ -50,12 +50,12 @@ grpc\SmartOffice\roomAccess\RoomStatus$1.class
 grpc\SmartOffice\documentRepository\DeleteDocument$Builder.class
 grpc\SmartOffice\roomAccess\roomAccessGrpc$roomAccessMethodDescriptorSupplier.class
 grpc\SmartOffice\chatbox\chatBoxServiceGrpc$chatBoxServiceStub.class
+grpc\SmartOffice\documentRepository\FolderListing$Builder.class
 grpc\SmartOffice\chatbox\chatBoxServiceGrpc$chatBoxServiceBlockingStub.class
 grpc\SmartOffice\userAccess\LoginStatus$Builder.class
 grpc\SmartOffice\documentRepository\DeleteDocument.class
 grpc\SmartOffice\documentRepository\FolderLocation.class
 grpc\SmartOffice\documentRepository\NewDocumentPath.class
-grpc\SmartOffice\documentRepository\FolderContents$Builder.class
 grpc\SmartOffice\userAccess\userGrpc.class
 grpc\SmartOffice\documentRepository\DeleteDocument$1.class
 grpc\SmartOffice\documentRepository\Empty$1.class
@@ -66,7 +66,6 @@ grpc\SmartOffice\documentRepository\SentDocumentOrBuilder.class
 grpc\SmartOffice\roomAccess\RoomAvailableOrBuilder.class
 grpc\SmartOffice\roomAccess\roomAccessGrpc$roomAccessBaseDescriptorSupplier.class
 grpc\SmartOffice\documentRepository\FolderLocationOrBuilder.class
-grpc\SmartOffice\documentRepository\FolderContents.class
 grpc\SmartOffice\userAccess\userGrpc$userFutureStub.class
 grpc\SmartOffice\chatbox\UserName$Builder.class
 grpc\SmartOffice\chatbox\UserStatus$1.class
@@ -112,12 +111,11 @@ grpc\SmartOffice\chatbox\NewChatBoxServer.class
 grpc\SmartOffice\userAccess\userGrpc$userImplBase.class
 grpc\SmartOffice\documentRepository\RequestedDocument.class
 grpc\SmartOffice\chatbox\UserName$1.class
+grpc\SmartOffice\documentRepository\FolderListing.class
 grpc\SmartOffice\documentRepository\UpdateDocument.class
 grpc\SmartOffice\chatbox\SendMessage$1.class
-grpc\SmartOffice\chatbox\ChatBoxGUI$1.class
 grpc\SmartOffice\roomAccess\RoomAvailable$Builder.class
 grpc\SmartOffice\userAccess\userGrpc$userStub.class
-grpc\SmartOffice\documentRepository\DocumentRepositoryServer.class
 grpc\SmartOffice\userAccess\userGrpc$userFileDescriptorSupplier.class
 grpc\SmartOffice\chatbox\ReceiveMessage.class
 grpc\SmartOffice\documentRepository\RequestedDocumentOrBuilder.class
@@ -127,7 +125,6 @@ grpc\SmartOffice\chatbox\UserName.class
 grpc\SmartOffice\roomAccess\roomAccessGrpc$1.class
 grpc\SmartOffice\chatbox\ChatBoxServiceImpl$1.class
 grpc\SmartOffice\documentRepository\documentRepositoryGrpc$documentRepositoryBaseDescriptorSupplier.class
-grpc\SmartOffice\chatbox\ChatBoxGUI$2.class
 grpc\SmartOffice\documentRepository\SentDocument$Builder.class
 grpc\SmartOffice\chatbox\UserStatus$Builder.class
 grpc\SmartOffice\userAccess\LoginStatusOrBuilder.class

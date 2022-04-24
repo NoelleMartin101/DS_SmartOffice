@@ -1,5 +1,6 @@
 package grpc.SmartOffice.documentRepository;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +13,7 @@ import javax.jmdns.ServiceInfo;
 import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryImplBase;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
 
 public class DocumentRepositoryServer extends documentRepositoryImplBase {
 
@@ -27,10 +29,21 @@ public class DocumentRepositoryServer extends documentRepositoryImplBase {
 		
 		server.awaitTermination();
 	}
+	@Override
+	public void retrieveFolderList(FolderLocation request, StreamObserver<FolderListing> responseObserver) {
+		System.out.println("Getting folder listings" );
+		String[] filenames;
+		File f = new File("files");
+		filenames = f.list();
+		for (String pathname : filenames)
+		{
+			responseObserver.onNext(FolderListing.newBuilder().setFolderListing(pathname).build());
+		}
+		responseObserver.onCompleted();
+	}
 	
-	 private Properties getProperties() {		
-		Properties prop = null;		
-		
+	private Properties getProperties() {		
+		Properties prop = null;				
 		 try (InputStream input = new FileInputStream("src/main/resources/documentRepository.properties")) {
 	            prop = new Properties();
 	            prop.load(input);

@@ -4,19 +4,19 @@
 package grpc.SmartOffice.documentRepository;
 
 /**
- * Protobuf type {@code FolderLocation}
+ * Protobuf type {@code FolderListing}
  */
-public  final class FolderLocation extends
+public  final class FolderListing extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:FolderLocation)
-    FolderLocationOrBuilder {
+    // @@protoc_insertion_point(message_implements:FolderListing)
+    FolderListingOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FolderLocation.newBuilder() to construct.
-  private FolderLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FolderListing.newBuilder() to construct.
+  private FolderListing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FolderLocation() {
-    path_ = "";
+  private FolderListing() {
+    folderListing_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FolderLocation(
+  private FolderListing(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            path_ = s;
+            folderListing_ = s;
             break;
           }
           default: {
@@ -70,45 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderLocation_descriptor;
+    return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderListing_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderLocation_fieldAccessorTable
+    return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderListing_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            grpc.SmartOffice.documentRepository.FolderLocation.class, grpc.SmartOffice.documentRepository.FolderLocation.Builder.class);
+            grpc.SmartOffice.documentRepository.FolderListing.class, grpc.SmartOffice.documentRepository.FolderListing.Builder.class);
   }
 
-  public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+  public static final int FOLDERLISTING_FIELD_NUMBER = 1;
+  private volatile java.lang.Object folderListing_;
   /**
-   * <code>string path = 1;</code>
+   * <code>string folderListing = 1;</code>
    */
-  public java.lang.String getPath() {
-    java.lang.Object ref = path_;
+  public java.lang.String getFolderListing() {
+    java.lang.Object ref = folderListing_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      path_ = s;
+      folderListing_ = s;
       return s;
     }
   }
   /**
-   * <code>string path = 1;</code>
+   * <code>string folderListing = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getPathBytes() {
-    java.lang.Object ref = path_;
+      getFolderListingBytes() {
+    java.lang.Object ref = folderListing_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      path_ = b;
+      folderListing_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+    if (!getFolderListingBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, folderListing_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+    if (!getFolderListingBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, folderListing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof grpc.SmartOffice.documentRepository.FolderLocation)) {
+    if (!(obj instanceof grpc.SmartOffice.documentRepository.FolderListing)) {
       return super.equals(obj);
     }
-    grpc.SmartOffice.documentRepository.FolderLocation other = (grpc.SmartOffice.documentRepository.FolderLocation) obj;
+    grpc.SmartOffice.documentRepository.FolderListing other = (grpc.SmartOffice.documentRepository.FolderListing) obj;
 
     boolean result = true;
-    result = result && getPath()
-        .equals(other.getPath());
+    result = result && getFolderListing()
+        .equals(other.getFolderListing());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getPath().hashCode();
+    hash = (37 * hash) + FOLDERLISTING_FIELD_NUMBER;
+    hash = (53 * hash) + getFolderListing().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(byte[] data)
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseDelimitedFrom(java.io.InputStream input)
+  public static grpc.SmartOffice.documentRepository.FolderListing parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseDelimitedFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static grpc.SmartOffice.documentRepository.FolderLocation parseFrom(
+  public static grpc.SmartOffice.documentRepository.FolderListing parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(grpc.SmartOffice.documentRepository.FolderLocation prototype) {
+  public static Builder newBuilder(grpc.SmartOffice.documentRepository.FolderListing prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code FolderLocation}
+   * Protobuf type {@code FolderListing}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:FolderLocation)
-      grpc.SmartOffice.documentRepository.FolderLocationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:FolderListing)
+      grpc.SmartOffice.documentRepository.FolderListingOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderLocation_descriptor;
+      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderListing_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderLocation_fieldAccessorTable
+      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderListing_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              grpc.SmartOffice.documentRepository.FolderLocation.class, grpc.SmartOffice.documentRepository.FolderLocation.Builder.class);
+              grpc.SmartOffice.documentRepository.FolderListing.class, grpc.SmartOffice.documentRepository.FolderListing.Builder.class);
     }
 
-    // Construct using grpc.SmartOffice.documentRepository.FolderLocation.newBuilder()
+    // Construct using grpc.SmartOffice.documentRepository.FolderListing.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      path_ = "";
+      folderListing_ = "";
 
       return this;
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderLocation_descriptor;
+      return grpc.SmartOffice.documentRepository.DocumentRepositoryImpl.internal_static_FolderListing_descriptor;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.documentRepository.FolderLocation getDefaultInstanceForType() {
-      return grpc.SmartOffice.documentRepository.FolderLocation.getDefaultInstance();
+    public grpc.SmartOffice.documentRepository.FolderListing getDefaultInstanceForType() {
+      return grpc.SmartOffice.documentRepository.FolderListing.getDefaultInstance();
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.documentRepository.FolderLocation build() {
-      grpc.SmartOffice.documentRepository.FolderLocation result = buildPartial();
+    public grpc.SmartOffice.documentRepository.FolderListing build() {
+      grpc.SmartOffice.documentRepository.FolderListing result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public grpc.SmartOffice.documentRepository.FolderLocation buildPartial() {
-      grpc.SmartOffice.documentRepository.FolderLocation result = new grpc.SmartOffice.documentRepository.FolderLocation(this);
-      result.path_ = path_;
+    public grpc.SmartOffice.documentRepository.FolderListing buildPartial() {
+      grpc.SmartOffice.documentRepository.FolderListing result = new grpc.SmartOffice.documentRepository.FolderListing(this);
+      result.folderListing_ = folderListing_;
       onBuilt();
       return result;
     }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof grpc.SmartOffice.documentRepository.FolderLocation) {
-        return mergeFrom((grpc.SmartOffice.documentRepository.FolderLocation)other);
+      if (other instanceof grpc.SmartOffice.documentRepository.FolderListing) {
+        return mergeFrom((grpc.SmartOffice.documentRepository.FolderListing)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(grpc.SmartOffice.documentRepository.FolderLocation other) {
-      if (other == grpc.SmartOffice.documentRepository.FolderLocation.getDefaultInstance()) return this;
-      if (!other.getPath().isEmpty()) {
-        path_ = other.path_;
+    public Builder mergeFrom(grpc.SmartOffice.documentRepository.FolderListing other) {
+      if (other == grpc.SmartOffice.documentRepository.FolderListing.getDefaultInstance()) return this;
+      if (!other.getFolderListing().isEmpty()) {
+        folderListing_ = other.folderListing_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      grpc.SmartOffice.documentRepository.FolderLocation parsedMessage = null;
+      grpc.SmartOffice.documentRepository.FolderListing parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (grpc.SmartOffice.documentRepository.FolderLocation) e.getUnfinishedMessage();
+        parsedMessage = (grpc.SmartOffice.documentRepository.FolderListing) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object path_ = "";
+    private java.lang.Object folderListing_ = "";
     /**
-     * <code>string path = 1;</code>
+     * <code>string folderListing = 1;</code>
      */
-    public java.lang.String getPath() {
-      java.lang.Object ref = path_;
+    public java.lang.String getFolderListing() {
+      java.lang.Object ref = folderListing_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        path_ = s;
+        folderListing_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string path = 1;</code>
+     * <code>string folderListing = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getPathBytes() {
-      java.lang.Object ref = path_;
+        getFolderListingBytes() {
+      java.lang.Object ref = folderListing_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        path_ = b;
+        folderListing_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string path = 1;</code>
+     * <code>string folderListing = 1;</code>
      */
-    public Builder setPath(
+    public Builder setFolderListing(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      path_ = value;
+      folderListing_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string path = 1;</code>
+     * <code>string folderListing = 1;</code>
      */
-    public Builder clearPath() {
+    public Builder clearFolderListing() {
       
-      path_ = getDefaultInstance().getPath();
+      folderListing_ = getDefaultInstance().getFolderListing();
       onChanged();
       return this;
     }
     /**
-     * <code>string path = 1;</code>
+     * <code>string folderListing = 1;</code>
      */
-    public Builder setPathBytes(
+    public Builder setFolderListingBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      path_ = value;
+      folderListing_ = value;
       onChanged();
       return this;
     }
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:FolderLocation)
+    // @@protoc_insertion_point(builder_scope:FolderListing)
   }
 
-  // @@protoc_insertion_point(class_scope:FolderLocation)
-  private static final grpc.SmartOffice.documentRepository.FolderLocation DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:FolderListing)
+  private static final grpc.SmartOffice.documentRepository.FolderListing DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new grpc.SmartOffice.documentRepository.FolderLocation();
+    DEFAULT_INSTANCE = new grpc.SmartOffice.documentRepository.FolderListing();
   }
 
-  public static grpc.SmartOffice.documentRepository.FolderLocation getDefaultInstance() {
+  public static grpc.SmartOffice.documentRepository.FolderListing getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FolderLocation>
-      PARSER = new com.google.protobuf.AbstractParser<FolderLocation>() {
+  private static final com.google.protobuf.Parser<FolderListing>
+      PARSER = new com.google.protobuf.AbstractParser<FolderListing>() {
     @java.lang.Override
-    public FolderLocation parsePartialFrom(
+    public FolderListing parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FolderLocation(input, extensionRegistry);
+      return new FolderListing(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FolderLocation> parser() {
+  public static com.google.protobuf.Parser<FolderListing> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FolderLocation> getParserForType() {
+  public com.google.protobuf.Parser<FolderListing> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public grpc.SmartOffice.documentRepository.FolderLocation getDefaultInstanceForType() {
+  public grpc.SmartOffice.documentRepository.FolderListing getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

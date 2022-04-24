@@ -60,21 +60,21 @@ public final class documentRepositoryGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.FolderLocation,
-      grpc.SmartOffice.documentRepository.FolderContents> getRetrieveFolderListMethod;
+      grpc.SmartOffice.documentRepository.FolderListing> getRetrieveFolderListMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "retrieveFolderList",
       requestType = grpc.SmartOffice.documentRepository.FolderLocation.class,
-      responseType = grpc.SmartOffice.documentRepository.FolderContents.class,
+      responseType = grpc.SmartOffice.documentRepository.FolderListing.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.FolderLocation,
-      grpc.SmartOffice.documentRepository.FolderContents> getRetrieveFolderListMethod() {
-    io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.FolderLocation, grpc.SmartOffice.documentRepository.FolderContents> getRetrieveFolderListMethod;
+      grpc.SmartOffice.documentRepository.FolderListing> getRetrieveFolderListMethod() {
+    io.grpc.MethodDescriptor<grpc.SmartOffice.documentRepository.FolderLocation, grpc.SmartOffice.documentRepository.FolderListing> getRetrieveFolderListMethod;
     if ((getRetrieveFolderListMethod = documentRepositoryGrpc.getRetrieveFolderListMethod) == null) {
       synchronized (documentRepositoryGrpc.class) {
         if ((getRetrieveFolderListMethod = documentRepositoryGrpc.getRetrieveFolderListMethod) == null) {
           documentRepositoryGrpc.getRetrieveFolderListMethod = getRetrieveFolderListMethod = 
-              io.grpc.MethodDescriptor.<grpc.SmartOffice.documentRepository.FolderLocation, grpc.SmartOffice.documentRepository.FolderContents>newBuilder()
+              io.grpc.MethodDescriptor.<grpc.SmartOffice.documentRepository.FolderLocation, grpc.SmartOffice.documentRepository.FolderListing>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "documentRepository", "retrieveFolderList"))
@@ -82,7 +82,7 @@ public final class documentRepositoryGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   grpc.SmartOffice.documentRepository.FolderLocation.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  grpc.SmartOffice.documentRepository.FolderContents.getDefaultInstance()))
+                  grpc.SmartOffice.documentRepository.FolderListing.getDefaultInstance()))
                   .setSchemaDescriptor(new documentRepositoryMethodDescriptorSupplier("retrieveFolderList"))
                   .build();
           }
@@ -224,7 +224,7 @@ public final class documentRepositoryGrpc {
     /**
      */
     public void retrieveFolderList(grpc.SmartOffice.documentRepository.FolderLocation request,
-        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderContents> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderListing> responseObserver) {
       asyncUnimplementedUnaryCall(getRetrieveFolderListMethod(), responseObserver);
     }
 
@@ -263,7 +263,7 @@ public final class documentRepositoryGrpc {
             asyncServerStreamingCall(
               new MethodHandlers<
                 grpc.SmartOffice.documentRepository.FolderLocation,
-                grpc.SmartOffice.documentRepository.FolderContents>(
+                grpc.SmartOffice.documentRepository.FolderListing>(
                   this, METHODID_RETRIEVE_FOLDER_LIST)))
           .addMethod(
             getSendDocumentMethod(),
@@ -319,7 +319,7 @@ public final class documentRepositoryGrpc {
     /**
      */
     public void retrieveFolderList(grpc.SmartOffice.documentRepository.FolderLocation request,
-        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderContents> responseObserver) {
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderListing> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getRetrieveFolderListMethod(), getCallOptions()), request, responseObserver);
     }
@@ -369,7 +369,7 @@ public final class documentRepositoryGrpc {
 
     /**
      */
-    public java.util.Iterator<grpc.SmartOffice.documentRepository.FolderContents> retrieveFolderList(
+    public java.util.Iterator<grpc.SmartOffice.documentRepository.FolderListing> retrieveFolderList(
         grpc.SmartOffice.documentRepository.FolderLocation request) {
       return blockingServerStreamingCall(
           getChannel(), getRetrieveFolderListMethod(), getCallOptions(), request);
@@ -420,7 +420,7 @@ public final class documentRepositoryGrpc {
       switch (methodId) {
         case METHODID_RETRIEVE_FOLDER_LIST:
           serviceImpl.retrieveFolderList((grpc.SmartOffice.documentRepository.FolderLocation) request,
-              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderContents>) responseObserver);
+              (io.grpc.stub.StreamObserver<grpc.SmartOffice.documentRepository.FolderListing>) responseObserver);
           break;
         default:
           throw new AssertionError();
