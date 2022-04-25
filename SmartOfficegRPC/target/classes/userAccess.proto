@@ -5,8 +5,8 @@ option java_package = "grpc.SmartOffice.userAccess";
 option java_outer_classname = "UserAccessImpl";
 
 service user{
-	rpc login(LoginRequest) returns (LoginStatus);
-	rpc logOut(Empty) returns (LoginStatus);
+	rpc login(LoginRequest) returns (LoginStatus){}
+	rpc logOut(Empty) returns (LoginStatus){}
 }
 
 message Empty{}

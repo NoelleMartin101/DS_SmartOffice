@@ -19,15 +19,14 @@ public class DocumentRepositoryServer extends documentRepositoryImplBase {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		DocumentRepositoryServer documentServer = new DocumentRepositoryServer();
-		//Properties prop = documentServer.getProperties();
-		//documentServer.registerService(prop);
+		Properties prop = documentServer.getProperties();
+		documentServer.registerService(prop);
 
 		System.out.println("Starting gRPC Server");
 		int port = 50051; 
 		Server server = ServerBuilder.forPort(port).addService(documentServer).build().start();
 		System.out.println("Server is running on port " + port);
-		
-		server.awaitTermination();
+		System.out.println("Server is running on port " + port);
 	}
 	@Override
 	public void retrieveFolderList(FolderLocation request, StreamObserver<FolderListing> responseObserver) {

@@ -5,9 +5,9 @@ option java_package = "grpc.SmartOffice.roomAccess";
 option java_outer_classname = "RoomAccessImpl";
 
 service roomAccess{
-	rpc roomAvaliable(RoomAvailable) returns (RoomStatus);
-	rpc roomBooking(RoomBooking) returns (RoomStatus);
-	rpc roomBookedBy(RoomBooked) returns (stream BoookedBy);
+	rpc roomAvaliable(RoomAvailable) returns (RoomStatus){}
+	rpc roomBooking(RoomBooking) returns (RoomStatus){}
+	rpc roomBookedBy(RoomBooked) returns (stream BoookedBy){}
 }
 
 

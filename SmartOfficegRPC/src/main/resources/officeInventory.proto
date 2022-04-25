@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package ="grpc.SmartOffice.officeInventory";
+option java_outer_classname = "OfficeInventoryImpl";
+
+service officeInventory{
+	rpc orderItems(stream OrderedItems) returns (OrderStatus){}
+} 
+message OrderedItems {
+	string item = 1;
+	//int32 count = 2;
+}
+message OrderStatus{
+	string orderStatus = 1;
+}

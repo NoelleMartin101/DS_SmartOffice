@@ -54,12 +54,12 @@ public final class RoomAccessImpl {
       "omBookedBy\030\001 \001(\t\022\021\n\tbookedFor\030\002 \001(\t\022\020\n\010b" +
       "ookedOn\030\003 \001(\t\"!\n\tBoookedBy\022\024\n\014roomBooked" +
       "By\030\001 \001(\t\" \n\nRoomStatus\022\022\n\nroomStatus\030\001 \001" +
-      "(\t2\217\001\n\nroomAccess\022,\n\rroomAvaliable\022\016.Roo" +
-      "mAvailable\032\013.RoomStatus\022(\n\013roomBooking\022\014" +
-      ".RoomBooking\032\013.RoomStatus\022)\n\014roomBookedB" +
-      "y\022\013.RoomBooked\032\n.BoookedBy0\001B/\n\033grpc.Sma" +
-      "rtOffice.roomAccessB\016RoomAccessImplP\001b\006p" +
-      "roto3"
+      "(\t2\225\001\n\nroomAccess\022.\n\rroomAvaliable\022\016.Roo" +
+      "mAvailable\032\013.RoomStatus\"\000\022*\n\013roomBooking" +
+      "\022\014.RoomBooking\032\013.RoomStatus\"\000\022+\n\014roomBoo" +
+      "kedBy\022\013.RoomBooked\032\n.BoookedBy\"\0000\001B/\n\033gr" +
+      "pc.SmartOffice.roomAccessB\016RoomAccessImp" +
+      "lP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
