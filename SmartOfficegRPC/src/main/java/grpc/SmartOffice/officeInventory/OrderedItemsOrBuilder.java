@@ -8,20 +8,17 @@ public interface OrderedItemsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   *int32 count = 2;
-   * </pre>
-   *
    * <code>string item = 1;</code>
    */
   java.lang.String getItem();
   /**
-   * <pre>
-   *int32 count = 2;
-   * </pre>
-   *
    * <code>string item = 1;</code>
    */
   com.google.protobuf.ByteString
       getItemBytes();
+
+  /**
+   * <code>int32 count = 2;</code>
+   */
+  int getCount();
 }

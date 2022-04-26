@@ -5,11 +5,11 @@ option java_package ="grpc.SmartOffice.officeInventory";
 option java_outer_classname = "OfficeInventoryImpl";
 
 service officeInventory{
-	rpc orderItems(stream OrderedItems) returns (OrderStatus){}
+	rpc orderItems(stream OrderedItems) returns (OrderStatus){}//Client Side Stream
 } 
 message OrderedItems {
 	string item = 1;
-	//int32 count = 2;
+	int32 count = 2;
 }
 message OrderStatus{
 	string orderStatus = 1;

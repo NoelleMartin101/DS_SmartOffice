@@ -2,26 +2,24 @@ package grpc.SmartOffice.documentRepository;
 
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryBlockingStub;
+import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryBlockingStub;
-import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryStub;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DocumentRepositoryGUI{
 	private static documentRepositoryBlockingStub blockingStub;
@@ -109,7 +107,7 @@ public class DocumentRepositoryGUI{
 					}
 			    };	
 				asyncStub.retrieveFolderList(request, response);
-				
+				lblDirectoryContents.setText(response.toString());
 			};
 		});
 		panel_service_1.add(btnGetPathContents);

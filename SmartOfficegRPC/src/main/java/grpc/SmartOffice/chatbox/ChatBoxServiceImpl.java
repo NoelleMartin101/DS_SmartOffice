@@ -49,11 +49,12 @@ public final class ChatBoxServiceImpl {
       "dMessage\030\001 \001(\t\022\023\n\013messageFrom\030\002 \001(\t\022\023\n\013m" +
       "essageTime\030\003 \001(\t\"\034\n\010UserName\022\020\n\010userName" +
       "\030\001 \001(\t\" \n\nUserStatus\022\022\n\nchatStatus\030\001 \001(\t" +
-      "2s\n\016chatBoxService\0226\n\017getChatMessages\022\014." +
-      "SendMessage\032\017.ReceiveMessage\"\000(\0010\001\022)\n\rge" +
-      "tChatStatus\022\t.UserName\032\013.UserStatus\"\000B0\n" +
-      "\030grpc.SmartOffice.chatboxB\022ChatBoxServic" +
-      "eImplP\001b\006proto3"
+      "2\236\001\n\016chatBoxService\0226\n\017getChatMessages\022\014" +
+      ".SendMessage\032\017.ReceiveMessage\"\000(\0010\001\022)\n\rg" +
+      "etChatStatus\022\t.UserName\032\013.UserStatus\"\000\022)" +
+      "\n\rsetChatStatus\022\t.UserName\032\013.UserStatus\"" +
+      "\000B0\n\030grpc.SmartOffice.chatboxB\022ChatBoxSe" +
+      "rviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

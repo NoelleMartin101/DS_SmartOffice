@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private OrderedItems() {
     item_ = "";
+    count_ = 0;
   }
 
   @java.lang.Override
@@ -47,6 +48,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             item_ = s;
+            break;
+          }
+          case 16: {
+
+            count_ = input.readInt32();
             break;
           }
           default: {
@@ -84,10 +90,6 @@ private static final long serialVersionUID = 0L;
   public static final int ITEM_FIELD_NUMBER = 1;
   private volatile java.lang.Object item_;
   /**
-   * <pre>
-   *int32 count = 2;
-   * </pre>
-   *
    * <code>string item = 1;</code>
    */
   public java.lang.String getItem() {
@@ -103,10 +105,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *int32 count = 2;
-   * </pre>
-   *
    * <code>string item = 1;</code>
    */
   public com.google.protobuf.ByteString
@@ -121,6 +119,15 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int COUNT_FIELD_NUMBER = 2;
+  private int count_;
+  /**
+   * <code>int32 count = 2;</code>
+   */
+  public int getCount() {
+    return count_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -140,6 +147,9 @@ private static final long serialVersionUID = 0L;
     if (!getItemBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, item_);
     }
+    if (count_ != 0) {
+      output.writeInt32(2, count_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -151,6 +161,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getItemBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, item_);
+    }
+    if (count_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, count_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,6 +184,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getItem()
         .equals(other.getItem());
+    result = result && (getCount()
+        == other.getCount());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -183,6 +199,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ITEM_FIELD_NUMBER;
     hash = (53 * hash) + getItem().hashCode();
+    hash = (37 * hash) + COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,6 +336,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       item_ = "";
 
+      count_ = 0;
+
       return this;
     }
 
@@ -345,6 +365,7 @@ private static final long serialVersionUID = 0L;
     public grpc.SmartOffice.officeInventory.OrderedItems buildPartial() {
       grpc.SmartOffice.officeInventory.OrderedItems result = new grpc.SmartOffice.officeInventory.OrderedItems(this);
       result.item_ = item_;
+      result.count_ = count_;
       onBuilt();
       return result;
     }
@@ -397,6 +418,9 @@ private static final long serialVersionUID = 0L;
         item_ = other.item_;
         onChanged();
       }
+      if (other.getCount() != 0) {
+        setCount(other.getCount());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -428,10 +452,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object item_ = "";
     /**
-     * <pre>
-     *int32 count = 2;
-     * </pre>
-     *
      * <code>string item = 1;</code>
      */
     public java.lang.String getItem() {
@@ -447,10 +467,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *int32 count = 2;
-     * </pre>
-     *
      * <code>string item = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -467,10 +483,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *int32 count = 2;
-     * </pre>
-     *
      * <code>string item = 1;</code>
      */
     public Builder setItem(
@@ -484,10 +496,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *int32 count = 2;
-     * </pre>
-     *
      * <code>string item = 1;</code>
      */
     public Builder clearItem() {
@@ -497,10 +505,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *int32 count = 2;
-     * </pre>
-     *
      * <code>string item = 1;</code>
      */
     public Builder setItemBytes(
@@ -511,6 +515,32 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       item_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int count_ ;
+    /**
+     * <code>int32 count = 2;</code>
+     */
+    public int getCount() {
+      return count_;
+    }
+    /**
+     * <code>int32 count = 2;</code>
+     */
+    public Builder setCount(int value) {
+      
+      count_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 count = 2;</code>
+     */
+    public Builder clearCount() {
+      
+      count_ = 0;
       onChanged();
       return this;
     }

@@ -62,6 +62,7 @@ public class ChatBoxGUI{
 				.build();
 
 		blockingStub = chatBoxServiceGrpc.newBlockingStub(channel);
+		asyncStub = chatBoxServiceGrpc.newStub(channel);
 		
 		initialize();
 		/*

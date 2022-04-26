@@ -33,12 +33,12 @@ public final class OfficeInventoryImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025officeInventory.proto\"\034\n\014OrderedItems\022" +
-      "\014\n\004item\030\001 \001(\t\"\"\n\013OrderStatus\022\023\n\013orderSta" +
-      "tus\030\001 \001(\t2@\n\017officeInventory\022-\n\norderIte" +
-      "ms\022\r.OrderedItems\032\014.OrderStatus\"\000(\001B9\n g" +
-      "rpc.SmartOffice.officeInventoryB\023OfficeI" +
-      "nventoryImplP\001b\006proto3"
+      "\n\025officeInventory.proto\"+\n\014OrderedItems\022" +
+      "\014\n\004item\030\001 \001(\t\022\r\n\005count\030\002 \001(\005\"\"\n\013OrderSta" +
+      "tus\022\023\n\013orderStatus\030\001 \001(\t2@\n\017officeInvent" +
+      "ory\022-\n\norderItems\022\r.OrderedItems\032\014.Order" +
+      "Status\"\000(\001B9\n grpc.SmartOffice.officeInv" +
+      "entoryB\023OfficeInventoryImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -57,7 +57,7 @@ public final class OfficeInventoryImpl {
     internal_static_OrderedItems_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OrderedItems_descriptor,
-        new java.lang.String[] { "Item", });
+        new java.lang.String[] { "Item", "Count", });
     internal_static_OrderStatus_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_OrderStatus_fieldAccessorTable = new

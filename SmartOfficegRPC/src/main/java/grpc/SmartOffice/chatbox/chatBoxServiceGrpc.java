@@ -91,6 +91,38 @@ public final class chatBoxServiceGrpc {
      return getGetChatStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<grpc.SmartOffice.chatbox.UserName,
+      grpc.SmartOffice.chatbox.UserStatus> getSetChatStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "setChatStatus",
+      requestType = grpc.SmartOffice.chatbox.UserName.class,
+      responseType = grpc.SmartOffice.chatbox.UserStatus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<grpc.SmartOffice.chatbox.UserName,
+      grpc.SmartOffice.chatbox.UserStatus> getSetChatStatusMethod() {
+    io.grpc.MethodDescriptor<grpc.SmartOffice.chatbox.UserName, grpc.SmartOffice.chatbox.UserStatus> getSetChatStatusMethod;
+    if ((getSetChatStatusMethod = chatBoxServiceGrpc.getSetChatStatusMethod) == null) {
+      synchronized (chatBoxServiceGrpc.class) {
+        if ((getSetChatStatusMethod = chatBoxServiceGrpc.getSetChatStatusMethod) == null) {
+          chatBoxServiceGrpc.getSetChatStatusMethod = getSetChatStatusMethod = 
+              io.grpc.MethodDescriptor.<grpc.SmartOffice.chatbox.UserName, grpc.SmartOffice.chatbox.UserStatus>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "chatBoxService", "setChatStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.chatbox.UserName.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.SmartOffice.chatbox.UserStatus.getDefaultInstance()))
+                  .setSchemaDescriptor(new chatBoxServiceMethodDescriptorSupplier("setChatStatus"))
+                  .build();
+          }
+        }
+     }
+     return getSetChatStatusMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -132,6 +164,13 @@ public final class chatBoxServiceGrpc {
       asyncUnimplementedUnaryCall(getGetChatStatusMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void setChatStatus(grpc.SmartOffice.chatbox.UserName request,
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.chatbox.UserStatus> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetChatStatusMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -148,6 +187,13 @@ public final class chatBoxServiceGrpc {
                 grpc.SmartOffice.chatbox.UserName,
                 grpc.SmartOffice.chatbox.UserStatus>(
                   this, METHODID_GET_CHAT_STATUS)))
+          .addMethod(
+            getSetChatStatusMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                grpc.SmartOffice.chatbox.UserName,
+                grpc.SmartOffice.chatbox.UserStatus>(
+                  this, METHODID_SET_CHAT_STATUS)))
           .build();
     }
   }
@@ -185,6 +231,14 @@ public final class chatBoxServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetChatStatusMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void setChatStatus(grpc.SmartOffice.chatbox.UserName request,
+        io.grpc.stub.StreamObserver<grpc.SmartOffice.chatbox.UserStatus> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetChatStatusMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -210,6 +264,13 @@ public final class chatBoxServiceGrpc {
     public grpc.SmartOffice.chatbox.UserStatus getChatStatus(grpc.SmartOffice.chatbox.UserName request) {
       return blockingUnaryCall(
           getChannel(), getGetChatStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public grpc.SmartOffice.chatbox.UserStatus setChatStatus(grpc.SmartOffice.chatbox.UserName request) {
+      return blockingUnaryCall(
+          getChannel(), getSetChatStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -238,10 +299,19 @@ public final class chatBoxServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetChatStatusMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<grpc.SmartOffice.chatbox.UserStatus> setChatStatus(
+        grpc.SmartOffice.chatbox.UserName request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetChatStatusMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_CHAT_STATUS = 0;
-  private static final int METHODID_GET_CHAT_MESSAGES = 1;
+  private static final int METHODID_SET_CHAT_STATUS = 1;
+  private static final int METHODID_GET_CHAT_MESSAGES = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -262,6 +332,10 @@ public final class chatBoxServiceGrpc {
       switch (methodId) {
         case METHODID_GET_CHAT_STATUS:
           serviceImpl.getChatStatus((grpc.SmartOffice.chatbox.UserName) request,
+              (io.grpc.stub.StreamObserver<grpc.SmartOffice.chatbox.UserStatus>) responseObserver);
+          break;
+        case METHODID_SET_CHAT_STATUS:
+          serviceImpl.setChatStatus((grpc.SmartOffice.chatbox.UserName) request,
               (io.grpc.stub.StreamObserver<grpc.SmartOffice.chatbox.UserStatus>) responseObserver);
           break;
         default:
@@ -330,6 +404,7 @@ public final class chatBoxServiceGrpc {
               .setSchemaDescriptor(new chatBoxServiceFileDescriptorSupplier())
               .addMethod(getGetChatMessagesMethod())
               .addMethod(getGetChatStatusMethod())
+              .addMethod(getSetChatStatusMethod())
               .build();
         }
       }
