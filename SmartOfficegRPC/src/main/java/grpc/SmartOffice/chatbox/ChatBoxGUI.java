@@ -2,24 +2,19 @@ package grpc.SmartOffice.chatbox;
 
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import grpc.SmartOffice.chatbox.chatBoxServiceGrpc.chatBoxServiceBlockingStub;
 import grpc.SmartOffice.chatbox.chatBoxServiceGrpc.chatBoxServiceStub;
-import grpc.SmartOffice.chatbox.chatBoxServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ChatBoxGUI{
 	private static chatBoxServiceBlockingStub blockingStub;	
@@ -27,8 +22,9 @@ public class ChatBoxGUI{
 	
 	private JFrame frame;
 	private JTextField textName;
-	private JTextArea sentMessage;
-	private JTextArea receivedMessage;	
+	private JTextArea messages;
+	private JTextArea users;	
+	private JList jUsersList;
 
 	/**
 	 * Launch the application.
@@ -74,10 +70,10 @@ public class ChatBoxGUI{
 		}*/
 	}
 	private void initialize()
-	{
+	{	
 		frame = new JFrame();
-		frame.setTitle("Client - Service Controller");
-		frame.setBounds(100, 100, 500, 300);
+		frame.setTitle("Smart Office IM");
+		frame.setBounds(100, 100, 500, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		BoxLayout bl = new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS);
@@ -87,7 +83,13 @@ public class ChatBoxGUI{
 		JPanel panel_service_1 = new JPanel();
 		frame.getContentPane().add(panel_service_1);
 		panel_service_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+				
+		String usersList[] = {"Noelle","John","Mary","Peter","Clodagh","Michelle","Audrey",};
+		jUsersList = new JList(usersList);
+		JPanel pUsersList = new JPanel();
+		pUsersList.add(jUsersList);
 		
+		panel_service_1.add(pUsersList);
 		//Allow user to add the staff name they want to get the status for
 		JLabel lblNewLabel_1 = new JLabel(" Name");
 		panel_service_1.add(lblNewLabel_1);
@@ -119,20 +121,27 @@ public class ChatBoxGUI{
 
 		});
 		panel_service_1.add(btnGetStatus);
+
+		jUsersList.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				String selectedValue = jUsersList.getSelectedValue().toString();
+				textName.setText(selectedValue);
+			}
+		});	
 		
-		sentMessage = new JTextArea(10,20);
-		sentMessage.setLineWrap(true);
-		sentMessage.setWrapStyleWord(true);
 		
-		JScrollPane scrollPane = new JScrollPane(sentMessage);
-		panel_service_1.add(scrollPane);
+		messages = new JTextArea(10,18);
+		messages.setLineWrap(true);
+		messages.setWrapStyleWord(true);
+		//messages.setText("You: Hi Clodagh, do you know where the FS for that new project we are working on is stored \n\nClodagh: Hi Noelle, yeah its in the repository under Documentation \n\nYou: thanks Clodagh ");
 		
-		receivedMessage = new JTextArea(10,20);
-		receivedMessage.setLineWrap(true);
-		receivedMessage.setWrapStyleWord(true);
-		
-		JScrollPane scrollPane2 = new JScrollPane(receivedMessage);
+		JScrollPane scrollPane2 = new JScrollPane(messages);
 		panel_service_1.add(scrollPane2);
 		
+		JButton btnSendMessage = new JButton("Send");
+		panel_service_1.add(btnSendMessage);
+		JButton btnViewHistory = new JButton("View History");
+		panel_service_1.add(btnViewHistory);
 	}
+
 }

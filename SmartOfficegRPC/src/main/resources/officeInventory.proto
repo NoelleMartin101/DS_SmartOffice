@@ -5,7 +5,7 @@ option java_package ="grpc.SmartOffice.officeInventory";
 option java_outer_classname = "OfficeInventoryImpl";
 
 service officeInventory{
-	rpc orderItems(stream OrderedItems) returns (OrderStatus){}//Client Side Stream
+	rpc orderItems(stream OrderedItems) returns (OrderStatus){}//Client Side Stream	
 } 
 message OrderedItems {
 	string item = 1;

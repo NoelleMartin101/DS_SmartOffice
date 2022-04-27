@@ -26,15 +26,16 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
 public class OfficeInventoryGUI{
-	private static ManagedChannel channel;
+	private static officeInventoryBlockingStub blockingStub;
 	private static officeInventoryStub asyncStub; 
 	private JFrame frame;
 	
-	private static void main(String[] args) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					OfficeInventoryGUI window = new OfficeInventoryGUI();
+					window.frame.setVisible(true);
 				}
 				catch(Exception e) {
 					e.printStackTrace();
@@ -56,7 +57,7 @@ public class OfficeInventoryGUI{
 	}
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("Client - Service Controller");
+		frame.setTitle("Smart Office Inventory");
 		frame.setBounds(100, 100, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -35,7 +36,8 @@ public class DocumentRepositoryGUI{
 				try {
 					DocumentRepositoryGUI window = new DocumentRepositoryGUI();
 					window.frame.setVisible(true);
-				}catch(Exception e) {
+				}
+				catch(Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -54,7 +56,7 @@ public class DocumentRepositoryGUI{
 	}
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("Client - Service Controller");
+		frame.setTitle("Smart Office Documents");
 		frame.setBounds(100, 100, 500, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -72,10 +74,20 @@ public class DocumentRepositoryGUI{
 		textPath = new JTextField();
 		panel_service_1.add(textPath);
 		textPath.setColumns(40);
-		
+		//textPath.setText("C:\\Users\\Noelle\\Dropbox\\College - NCIRL\\Distributed Systems\\Assignment");
 		JLabel lblNewLabel_2 = new JLabel(" Contents: ");
 		panel_service_1.add(lblNewLabel_2);
 
+		JTextArea jtdirectoryContents = new JTextArea("dirContents");
+		jtdirectoryContents = new JTextArea(10,28);
+		jtdirectoryContents.setLineWrap(true);
+		jtdirectoryContents.setWrapStyleWord(true);
+		//jtdirectoryContents.setText("DS_SmartOffice \nDS_SmartOffice - Copy \n21135339_NoelleMartin_DistributedSystems_ProjectProposal.docx \n21135339_NoelleMartin_DistributedSystems_ProjectReport.docx \nDistributedSystems_Project Presentation.pptx");
+		
+		JScrollPane scrollPane2 = new JScrollPane(jtdirectoryContents);
+		panel_service_1.add(scrollPane2);
+		
+		
 		JLabel lblDirectoryContents = new JLabel("");
 		panel_service_1.add(lblDirectoryContents);
 		
@@ -111,5 +123,16 @@ public class DocumentRepositoryGUI{
 			};
 		});
 		panel_service_1.add(btnGetPathContents);
+		
+		JPanel panel_service_2 = new JPanel();
+		frame.getContentPane().add(panel_service_2);
+		panel_service_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JButton btnUploadDocument = new JButton("Upload");
+		JButton btnDeleteDocument = new JButton("Delete Selected");		
+		JButton btnDownloadDocument = new JButton("Download Select");
+		panel_service_2.add(btnUploadDocument);
+		panel_service_2.add(btnDeleteDocument);
+		panel_service_2.add(btnDownloadDocument);
+		
 	}
 }

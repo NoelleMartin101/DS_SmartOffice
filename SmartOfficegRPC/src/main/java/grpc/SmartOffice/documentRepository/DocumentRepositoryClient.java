@@ -2,8 +2,6 @@ package grpc.SmartOffice.documentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryBlockingStub;
 import grpc.SmartOffice.documentRepository.documentRepositoryGrpc.documentRepositoryStub;

@@ -1,6 +1,5 @@
 package grpc.SmartOffice.officeInventory;
 
-import grpc.SmartOffice.officeInventory.officeInventoryGrpc.officeInventoryBlockingStub;
 import grpc.SmartOffice.officeInventory.officeInventoryGrpc.officeInventoryStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
